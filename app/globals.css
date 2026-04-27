@@ -8,8 +8,11 @@
   --blue-dark: #0a3d75;
   --blue-soft: #e8f1fb;
   --gold: #c69b47;
-  --shadow: 0 28px 80px rgba(15, 45, 80, 0.13);
-  --shadow-soft: 0 14px 40px rgba(15, 45, 80, 0.08);
+  --shadow: 0 30px 90px rgba(15, 45, 80, 0.12);
+  --shadow-soft: 0 16px 44px rgba(15, 45, 80, 0.07);
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(15, 93, 168, 0.14);
 }
 
 * {
@@ -39,10 +42,65 @@ body {
 
 .resume-page {
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   padding-top: 88px;
   padding-bottom: 56px;
   position: relative;
+}
+
+.resume-export-area {
+  width: 100%;
+}
+
+/* โหมด ?pdf=1: หนึ่งหน้า A4 ไม่มีแถบลอย — พื้นหลัง/มิติเหมือนหน้าเว็บ (gradient + การ์ด) */
+html:has(.resume-page--pdf),
+body:has(.resume-page--pdf) {
+  -webkit-print-color-adjust: exact;
+  min-height: 100vh;
+  print-color-adjust: exact;
+}
+
+.resume-page--pdf {
+  min-height: auto;
+  overflow: hidden;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+.resume-page--pdf .sticky-sidebar {
+  position: static;
+}
+
+.resume-pdf-stage {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.resume-pdf-sheet {
+  aspect-ratio: 210 / 297;
+  background: transparent;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 210mm;
+}
+
+.resume-pdf-inner {
+  left: 0;
+  opacity: 0;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  transform-origin: top left;
+  transition: opacity 0.15s ease;
+  /* ความกว้างคงที่ให้ breakpoint lg ทำงาน แล้วค่อย scale + จัดกึ่งกลางด้วย JS */
+  width: 1200px;
+}
+
+.resume-pdf-inner--ready {
+  opacity: 1;
 }
 
 .resume-page::before,
@@ -82,15 +140,15 @@ body {
 
 .nav-shell {
   align-items: center;
-  background: rgba(255, 255, 255, 0.84);
-  border: 1px solid rgba(15, 93, 168, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--glass-border);
   border-radius: 999px;
-  box-shadow: 0 18px 45px rgba(15, 45, 80, 0.1);
+  box-shadow: 0 18px 45px rgba(15, 45, 80, 0.09);
   display: flex;
   gap: 14px;
   justify-content: space-between;
   padding: 10px;
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(22px);
 }
 
 .brand-link,
@@ -175,13 +233,11 @@ body {
 
 .hero-card,
 .section-card {
-  border: 1px solid rgba(15, 93, 168, 0.12);
+  border: 1px solid var(--glass-border);
   border-radius: 32px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.82)),
-    rgba(255, 255, 255, 0.9);
+  background: linear-gradient(180deg, var(--glass-strong), var(--glass));
   box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(22px);
 }
 
 .hero-card {
@@ -295,23 +351,41 @@ h1 span {
 }
 
 .hero-copy {
-  background: rgba(255, 255, 255, 0.32);
-  border-left: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.36));
+  border: 1px solid rgba(15, 93, 168, 0.1);
   border-radius: 24px;
+  box-shadow:
+    0 18px 40px rgba(15, 45, 80, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   padding-left: clamp(24px, 4vw, 44px);
+  padding-right: clamp(18px, 3vw, 28px);
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: relative;
   z-index: 1;
 }
 
+.hero-copy::before {
+  background: radial-gradient(circle at top left, rgba(15, 93, 168, 0.16), transparent 58%);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
 .contact-strip {
-  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(15, 93, 168, 0.1);
+  border-radius: 16px;
   color: var(--muted);
   display: flex;
   flex-wrap: wrap;
   font-size: 0.88rem;
   gap: 12px 20px;
-  margin-bottom: 28px;
-  padding-bottom: 18px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
 }
 
 .contact-strip a,
@@ -379,6 +453,21 @@ h1 span {
   position: relative;
 }
 
+.section-card::after {
+  background: radial-gradient(circle at top right, rgba(15, 93, 168, 0.12), transparent 55%);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.section-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .section-card::before {
   background: linear-gradient(90deg, rgba(198, 155, 71, 0.45), rgba(15, 93, 168, 0.15), transparent);
   border-radius: 32px 32px 0 0;
@@ -410,13 +499,31 @@ h1 span {
 }
 
 .timeline-item {
-  background: rgba(255, 255, 255, 0.46);
-  border: 1px solid rgba(15, 93, 168, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.32));
+  border: 1px solid rgba(15, 93, 168, 0.12);
   border-left: 3px solid rgba(15, 93, 168, 0.22);
   border-radius: 22px;
-  box-shadow: var(--shadow-soft);
+  box-shadow:
+    0 16px 38px rgba(15, 45, 80, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
   padding: 22px 22px 22px 28px;
   position: relative;
+}
+
+.timeline-item::after {
+  background: radial-gradient(circle at top left, rgba(198, 155, 71, 0.14), transparent 55%);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.timeline-item > * {
+  position: relative;
+  z-index: 1;
 }
 
 .timeline-dot {
@@ -428,6 +535,7 @@ h1 span {
   position: absolute;
   top: 7px;
   width: 16px;
+  box-shadow: 0 10px 18px rgba(15, 45, 80, 0.14);
 }
 
 .timeline-item h3,

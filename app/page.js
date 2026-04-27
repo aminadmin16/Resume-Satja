@@ -1,4 +1,7 @@
+import dynamic from "next/dynamic";
 import DownloadButton from "./DownloadButton";
+
+const ResumePdfOnePage = dynamic(() => import("./ResumePdfOnePage"));
 
 const profileHighlights = [
   // ".NET",
@@ -125,29 +128,10 @@ function escapeRegExp(value) {
   return value.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
 }
 
-export default function Home() {
+function ResumeMainContent() {
   return (
-    <main className="resume-page">
-      <nav className="resume-nav">
-        <div className="container">
-          <div className="nav-shell">
-            <a className="brand-link" href="#summary" aria-label="Go to resume summary">
-              SC
-            </a>
-            <div className="nav-links" aria-label="Resume sections">
-              {navItems.map((item) => (
-                <a href={item.href} key={item.href}>
-                  {item.label}
-                </a>
-              ))}
-            </div>
-            <DownloadButton />
-          </div>
-        </div>
-      </nav>
-
-      <div className="resume-export-area" id="resume-export">
-        <section className="hero-section" id="summary">
+    <>
+      <section className="hero-section" id="summary">
           <div className="container">
             <div className="hero-card">
               <div className="row g-4 align-items-center">
@@ -256,7 +240,45 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </div>
+    </>
+  );
+}
+
+export default async function Home({ searchParams }) {
+  const params = await searchParams;
+  const isPdf = params?.pdf === "1";
+
+  return (
+    <main className={`resume-page${isPdf ? " resume-page--pdf" : ""}`}>
+      {!isPdf ? (
+        <nav className="resume-nav">
+          <div className="container">
+            <div className="nav-shell">
+              <a className="brand-link" href="#summary" aria-label="Go to resume summary">
+                SC
+              </a>
+              <div className="nav-links" aria-label="Resume sections">
+                {navItems.map((item) => (
+                  <a href={item.href} key={item.href}>
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+              <DownloadButton />
+            </div>
+          </div>
+        </nav>
+      ) : null}
+
+      {isPdf ? (
+        <ResumePdfOnePage>
+          <ResumeMainContent />
+        </ResumePdfOnePage>
+      ) : (
+        <div className="resume-export-area" id="resume-export">
+          <ResumeMainContent />
+        </div>
+      )}
     </main>
   );
 }
