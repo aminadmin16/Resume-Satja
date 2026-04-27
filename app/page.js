@@ -154,7 +154,7 @@ export default function Home() {
                 <div className="col-lg-5">
                   <div className="identity-card">
                     <div className="avatar-frame">
-                      <img alt="Satja Chaiseanpha" className="avatar-photo" crossOrigin="anonymous" src="/profile-satja.png" />
+                      <img alt="Satja Chaiseanpha" className="avatar-photo" src="/profile-satja.png" />
                     </div>
                     <p className="eyebrow mb-2">Software Developer</p>
                     <h1>
