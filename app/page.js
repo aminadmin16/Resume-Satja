@@ -249,9 +249,9 @@ export default async function Home({ searchParams }) {
   const isPdf = params?.pdf === "1";
 
   return (
-    <main className={`resume-page${isPdf ? " resume-page--pdf" : ""}`}>
+    <>
       {!isPdf ? (
-        <nav className="resume-nav">
+        <nav className="resume-nav" aria-label="Resume navigation">
           <div className="container">
             <div className="nav-shell">
               <a className="brand-link" href="#summary" aria-label="Go to resume summary">
@@ -270,16 +270,18 @@ export default async function Home({ searchParams }) {
         </nav>
       ) : null}
 
-      {isPdf ? (
-        <ResumePdfOnePage>
-          <ResumeMainContent />
-        </ResumePdfOnePage>
-      ) : (
-        <div className="resume-export-area" id="resume-export">
-          <ResumeMainContent />
-        </div>
-      )}
-    </main>
+      <main className={`resume-page${isPdf ? " resume-page--pdf" : ""}`}>
+        {isPdf ? (
+          <ResumePdfOnePage>
+            <ResumeMainContent />
+          </ResumePdfOnePage>
+        ) : (
+          <div className="resume-export-area" id="resume-export">
+            <ResumeMainContent />
+          </div>
+        )}
+      </main>
+    </>
   );
 }
 

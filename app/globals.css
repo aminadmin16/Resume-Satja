@@ -44,8 +44,8 @@ body {
   min-height: 100vh;
   overflow-x: clip;
   overflow-y: visible;
-  padding-top: 88px;
   padding-bottom: 56px;
+  padding-top: 88px;
   position: relative;
 }
 
@@ -130,11 +130,22 @@ body:has(.resume-page--pdf) {
 }
 
 .resume-nav {
-  left: 0;
-  padding: 18px 0 0;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: linear-gradient(
+    180deg,
+    rgba(247, 249, 252, 0.94) 0%,
+    rgba(247, 249, 252, 0.82) 55%,
+    rgba(247, 249, 252, 0) 100%
+  );
+  box-sizing: border-box;
+  inset-inline: 0;
+  padding:
+    max(6px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 12px
+    max(12px, env(safe-area-inset-left, 0px));
   position: fixed;
-  right: 0;
   top: 0;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -622,11 +633,13 @@ time {
     var(--paper);
   border: 1px solid var(--line);
   border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(15, 45, 80, 0.06);
   color: #344054;
   font-size: 0.88rem;
   font-weight: 700;
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 12px;
-  box-shadow: 0 10px 24px rgba(15, 45, 80, 0.06);
 }
 
 .skill-group-plain ul {
@@ -644,19 +657,35 @@ time {
 }
 
 .skill-line {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 6px 10px;
   justify-content: space-between;
   margin-bottom: 8px;
+  min-width: 0;
+}
+
+.skill-line > span:first-of-type {
+  flex: 1 1 108px;
+  line-height: 1.25;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .skill-line strong {
   color: var(--blue);
-  font-size: 0.74rem;
-  letter-spacing: 0.06em;
+  flex: 0 1 auto;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin-left: auto;
+  max-width: 100%;
+  min-width: 0;
+  text-align: right;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .skill-meter-bar {
@@ -697,16 +726,20 @@ time {
   align-items: center;
   color: var(--blue-dark);
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px 8px;
   justify-content: space-between;
   line-height: 1;
   margin-top: 8px;
+  min-width: 0;
 }
 
 .meter-meta span {
   color: var(--blue-dark);
+  flex: 1 1 auto;
   font-size: 0.92rem;
   font-weight: 900;
+  min-width: 0;
 }
 
 .meter-meta small {
@@ -714,11 +747,16 @@ time {
   border: 1px solid rgba(15, 93, 168, 0.1);
   border-radius: 999px;
   color: var(--blue);
-  font-size: 0.56rem;
+  flex: 0 1 auto;
+  font-size: 0.54rem;
   font-weight: 900;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
+  max-width: 100%;
   padding: 4px 7px;
+  text-align: center;
   text-transform: uppercase;
+  white-space: normal;
+  word-break: break-word;
 }
 
 @media (max-width: 991.98px) {
