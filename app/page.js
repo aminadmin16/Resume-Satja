@@ -69,7 +69,7 @@ const skillGroups = [
     title: "BACKEND",
     skills: [
       { name: ".NET (C#)", level: 95, grade: "Advanced" },
-      { name: "RESTful API", level: 88, grade: "Advanced" },
+      { name: "RESTful API", level: 95, grade: "Advanced" },
       { name: "Node.js", level: 80, grade: "Intermediate" },
       { name: "Spring Boot (Java)", level: 72, grade: "Good" },
     ],
