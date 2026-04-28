@@ -152,7 +152,7 @@ function ResumeMainContent() {
                   <div className="hero-copy">
                     <div className="contact-strip">
                       <a href="mailto:knownaddress90@gmail.com">knownaddress90@gmail.com</a>
-                      <a href="tel:092817985">092 817 985</a>
+                      <a href="tel:092817985">0835 014 158</a>
                       <span>จังหวัดหนองบัวลำภู - ประเทศไทย</span>
                     </div>
                     <h2>PROFESSIONAL SUMMARY</h2>
