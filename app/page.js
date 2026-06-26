@@ -1,359 +1,225 @@
 import dynamic from "next/dynamic";
-import DownloadButton from "./DownloadButton";
 
 const ResumePdfOnePage = dynamic(() => import("./ResumePdfOnePage"));
-
-const profileHighlights = [
-  // ".NET",
-  // "Angular (TypeScript)",
-  // "Next.js",
-  // "Tableau",
-  // "AI",
-  // "Full Stack Development",
-];
-
-const profileSummary =
-  "Software Developer  เชี่ยวชาญด้านการพัฒนา Full Stack Development ด้วย .NET, Angular (TypeScript) และ Next.js พร้อมทักษะขั้นสูงในการสร้าง Business Intelligence ผ่าน Tableau มีความเชี่ยวชาญในการประยุกต์ใช้ AI เพื่อเพิ่มประสิทธิภาพในการทำงาน โดยยึดหลักการว่า การมี AI เป็นสิ่งสำคัญ แต่การควบคุม AI ให้ผลลัพธ์ตามที่ถูกต้อง แม่นยำ และตรงตาม Logic ที่ต้องการนั้นสำคัญยิ่งกว่า' มุ่งเน้นการเขียน Code ที่มีคุณภาพสูง ปลอดภัย และตอบโจทย์ธุรกิจได้อย่างแท้จริง";
-
-const experiences = [
-  {
-    title: "Multita Co.,Ltd. — Software Developer",
-    date: "2022/07 - PRESENT",
-    meta: "Location: Udon Thani / Khon Kaen (Full-time Remote / WFH)",
-    intro: "หน้าที่และความรับผิดชอบหลัก :",
-    bullets: [
-      "Full-Stack Development: ออกแบบและพัฒนา Web Application ด้วย Angular (TypeScript) ร่วมกับ SyncFusion และ DevExtreme ในส่วนของ Frontend และพัฒนาระบบหลังบ้านด้วย .NET (C#) ผ่านสถาปัตยกรรม RESTful API เพื่อการสื่อสารข้อมูลที่มีประสิทธิภาพ",
-      "Business Intelligence & Analytics: บริหารจัดการและออกแบบโครงสร้างข้อมูลขนาดใหญ่เพื่อสร้าง Tableau Dashboard ขั้นสูงในการวิเคราะห์ Cash Conversion Cost ช่วยให้ฝ่ายการเงินบริหารจัดการกระแสเงินสดได้อย่างแม่นยำ",
-      "Mobile Application Development: พัฒนาและดูแลระบบแอปพลิเคชันการขายและระบบประกันภัยรถยนต์ด้วย Java (Android Studio)",
-    ],
-    projectsTitle: "โครงการ :",
-    projects: [
-      "Hospital Information System (Sikarin Hospital): พัฒนาโมดูลในระบบสารสนเทศโรงพยาบาลศิครินทร์ โดยเน้นการจัดการข้อมูลคนไข้ที่ซับซ้อนด้วย Angular และ .NET",
-      "Energy Sector Analytics (IRPC): รับผิดชอบในตำแหน่ง Tableau Developer ออกแบบระบบรายงานข้อมูลเชิงลึกเพื่อสนับสนุนการตัดสินใจของผู้บริหาร",
-      "Insurance & Enterprise Systems (TQM & Viriyah Insurance): พัฒนาแพลตฟอร์มประกันภัยรถยนต์ในฐานะ Frontend และ Software Developer โดยมุ่งเน้นการสร้าง UI ที่รองรับการใช้งานหนัก (High-traffic)",
-      "Retail Solution (PUMPUI): พัฒนาซอฟต์แวร์ระบบจัดการการขายและสต็อกสินค้าเพื่อเพิ่มประสิทธิภาพการดำเนินงาน",
-    ],
-  },
-  {
-    title: "รับงานอิสระและที่ปรึกษาด้านซอฟต์แวร์ (Freelance & Technical Consultant)",
-    date: "2023/09 - PRESENT",
-    bullets: [
-      "Modern Full-Stack Development (Multi-Framework): พัฒนา Web Application ด้วยเทคโนโลยีที่เหมาะสมกับโจทย์ของลูกค้า ทั้งการสร้าง Complex UI ด้วย Angular/DevExtreme และการพัฒนา High-Performance Web โดยใช้ React และ Next.js เพื่อผลทางด้าน SEO และความรวดเร็วในการแสดงผล",
-      "Scalable Backend & API Architecture: ออกแบบและพัฒนาส่วนหลังบ้านด้วย .NET (C#) และ Node.js โดยเน้นการสร้าง RESTful API ที่มีโครงสร้างแข็งแรง รองรับการขยายตัว และเชื่อมต่อกับระบบฐานข้อมูลอย่างมีประสิทธิภาพ",
-      "Technical Consultant & Problem Solver: ช่วยวิเคราะห์หาทางออกให้กับปัญหาด้านซอฟต์แวร์ที่ซับซ้อน และทำหน้าที่เป็นตัวกลางในการเปลี่ยนโจทย์ทางธุรกิจให้กลายเป็นระบบดิจิทัลที่พร้อมใช้งานจริง โดยเน้นความถูกต้องและดูแลรักษาง่ายในระยะยาว",
-    ],
-  },
-  {
-    title: "CHAREON TUT Co.,Ltd. — Full Stack Developer (Intern)",
-    date: "2021/11 - 2022/02",
-    bullets: [
-      "Full-Stack Development Fundamentals: ฝึกฝนการพัฒนาเว็บแอปพลิเคชันแบบครบวงจร โดยเน้นการเรียนรู้โครงสร้างระบบทั้งส่วนหน้าบ้าน (Frontend) และหลังบ้าน (Backend)",
-      "Frontend Implementation: พัฒนาส่วนแสดงผลด้วย Angular โดยใช้ TypeScript, HTML และ CSS/SCSS เพื่อสร้างหน้าจอผู้ใช้งาน (UI) ให้ถูกต้องแม่นยำตามการออกแบบ (Pixel-Perfect Design)",
-      "Backend & MVC Architecture: ศึกษาและพัฒนาระบบหลังบ้านด้วย Java ผ่าน Spring Boot Framework โดยประยุกต์ใช้หลักการ Spring MVC (Model-View-Controller) เพื่อแยกส่วนการทำงานของ Logic และการจัดการข้อมูลให้เป็นระบบ",
-      "Professional Workflow: เรียนรู้กระบวนการทำงานจริงในรูปแบบ Software Development Life Cycle (SDLC) ตั้งแต่การวิเคราะห์ Logic ไปจนถึงการ Implementation โค้ดที่ใช้งานได้จริง",
-    ],
-  },
-];
-
-const skillGroups = [
-  {
-    title: "FRONTEND",
-    skills: [
-      { name: "Angular (TS)", level: 95, grade: "Advanced" },
-      { name: "DevExtreme", level: 90, grade: "Advanced" },
-      { name: "Next.js", level: 88, grade: "Intermediate" },
-      { name: "React", level: 80, grade: "Intermediate" },
-    ],
-  },
-  {
-    title: "BACKEND",
-    skills: [
-      { name: ".NET (C#)", level: 95, grade: "Advanced" },
-      { name: "RESTful API", level: 95, grade: "Advanced" },
-      { name: "Node.js", level: 80, grade: "Intermediate" },
-      { name: "Spring Boot (Java)", level: 72, grade: "Good" },
-    ],
-  },
-  {
-    title: "DATA VISUALIZATION",
-    plain: true,
-    skills: [
-      { name: "Tableau (Reporting & BI)", level: 90, grade: "Advanced" }
-    ],
-  },
-  {
-    title: "PROGRAMMING LANGUAGES",
-    plain: true,
-    skills: [
-      { name: "C#", level: 90, grade: "Advanced" },
-      { name: "TypeScript", level: 90, grade: "Advanced" },
-      { name: "JavaScript", level: 86, grade: "Intermediate" },
-      { name: "SQL", level: 82, grade: "Intermediate" },
-      { name: "Java", level: 74, grade: "Good" },
-    ],
-  },
-  {
-    title: "TOOLS & OTHERS",
-    plain: true,
-    skills: [
-      { name: "Git", level: 84, grade: "Intermediate" },
-      { name: "Postman", level: 84, grade: "Intermediate" },
-      { name: "Arduino (IoT)", level: 70, grade: "Good" },
-    ],
-  },
-];
-
-const navItems = [
-  { href: "#summary", label: "Summary" },
-  { href: "#experience", label: "Experience" },
-  { href: "#education", label: "Education" },
-  { href: "#skills", label: "Skills" },
-];
-
-function HighlightText({ text, words = profileHighlights }) {
-  const pattern = new RegExp(`(${words.map(escapeRegExp).join("|")})`, "g");
-
-  return text.split(pattern).map((part, index) =>
-    words.includes(part) ? (
-      <span className="text-highlight" key={`${part}-${index}`}>
-        {part}
-      </span>
-    ) : (
-      part
-    ),
-  );
-}
-
-function escapeRegExp(value) {
-  return value.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
-}
-
-function ResumeMainContent() {
-  return (
-    <>
-      <section className="hero-section" id="summary">
-          <div className="container">
-            <div className="hero-card">
-              <div className="row g-4 align-items-center">
-                <div className="col-lg-5">
-                  <div className="identity-card">
-                    <div className="avatar-frame">
-                      <img alt="Satja Chaiseanpha" className="avatar-photo" src="/profile-satja.png" />
-                    </div>
-                    <p className="eyebrow mb-2">Software Developer</p>
-                    <h1>
-                      <span>SATJA CHAISEANPHA</span>
-                      <span>(FLUKE)</span>
-                    </h1>
-                  </div>
-                </div>
-
-                <div className="col-lg-7">
-                  <div className="hero-copy">
-                    <div className="contact-strip">
-                      <a href="mailto:knownaddress90@gmail.com">knownaddress90@gmail.com</a>
-                      <a href="tel:092817985">0835 014 158</a>
-                      <span>จังหวัดหนองบัวลำภู - ประเทศไทย</span>
-                    </div>
-                    <h2>PROFESSIONAL SUMMARY</h2>
-                    <p>
-                      <HighlightText text={profileSummary} />
-                    </p>
-                    <div className="profile-chips" aria-label="Highlighted skills">
-                      {profileHighlights.map((highlight) => (
-                        <span key={highlight}>{highlight}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="content-section">
-          <div className="container">
-            <div className="row g-4">
-              <div className="col-lg-7">
-                <div className="section-card" id="experience">
-                  <SectionTitle title="WORK EXPERIENCE" />
-                  <div className="timeline">
-                    {experiences.map((experience) => (
-                      <article className="timeline-item" key={experience.title}>
-                        <div className="timeline-dot" />
-                        <div className="d-flex flex-column flex-md-row justify-content-between gap-2">
-                          <h3>{experience.title}</h3>
-                          <time>{experience.date}</time>
-                        </div>
-                        {experience.meta ? <p className="meta">{experience.meta}</p> : null}
-                        {experience.intro ? <p className="label-line">{experience.intro}</p> : null}
-                        <ResumeList items={experience.bullets} />
-                        {experience.projectsTitle ? (
-                          <>
-                            <p className="label-line mt-3">{experience.projectsTitle}</p>
-                            <ResumeList items={experience.projects} />
-                          </>
-                        ) : null}
-                      </article>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-5">
-                <aside className="sticky-sidebar">
-                  <div className="section-card education-card" id="education">
-                    <SectionTitle title="EDUCATION" />
-                    <div className="d-flex justify-content-between gap-3">
-                      <div>
-                        <h3>มหาวิทยาลัยราชภัฏอุดรธานี</h3>
-                        <p>ระดับการศึกษาปริญญาตรี วิทยาศาสตร์บัณฑิต สาขาวิทยาการคอมพิวเตอร์</p>
-                        <p>GPA : 3.14</p>
-                      </div>
-                      <time>2017-2021</time>
-                    </div>
-                  </div>
-
-                  <div className="section-card skills-card" id="skills">
-                    <SectionTitle title="SKILLS & TECHNOLOGIES" />
-                    <div className="skill-grid">
-                      {skillGroups.map((group) => (
-                        <div className={`skill-group${group.plain ? " skill-group-plain" : ""}`} key={group.title}>
-                          <h3>{group.title}</h3>
-                          <ul>
-                            {group.skills.map((skill) => (
-                              <li key={skill.name}>
-                                <div className="skill-line">
-                                  <span>{skill.name}</span>
-                                  {group.plain ? null : <strong>{skill.grade}</strong>}
-                                </div>
-                                {group.plain ? null : <SkillGauge level={skill.level} name={skill.name} />}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </aside>
-              </div>
-            </div>
-          </div>
-        </section>
-    </>
-  );
-}
+const ResumeClient = dynamic(() => import("./ResumeClient"));
 
 export default async function Home({ searchParams }) {
   const params = await searchParams;
   const isPdf = params?.pdf === "1";
 
+  if (isPdf) {
+    return (
+      <main className="resume-page resume-page--pdf">
+        <ResumePdfOnePage>
+          <PdfContent />
+        </ResumePdfOnePage>
+      </main>
+    );
+  }
+
+  return <ResumeClient />;
+}
+
+// Static English content for PDF export only
+function PdfContent() {
+  const profileHighlights = [
+    "Full Stack Developer", ".NET + Angular", "Next.js / React",
+    "Tableau BI", "AI-Assisted Dev", "4+ Years Exp.",
+  ];
+
+  const TECH_KEYWORDS = [
+    ".NET", ".NET (C#)", "Angular", "Angular (TypeScript)", "React", "Next.js",
+    "Tableau", "RESTful API", "Java", "Spring Boot", "DevExtreme", "SyncFusion",
+    "TypeScript", "Node.js", "SQL",
+  ];
+
+  function escapeRegExp(v) {
+    return v.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
+  }
+
+  function HighlightText({ text }) {
+    const pattern = new RegExp(`(${TECH_KEYWORDS.map(escapeRegExp).join("|")})`, "g");
+    return text.split(pattern).map((part, i) =>
+      TECH_KEYWORDS.includes(part)
+        ? <span className="text-highlight" key={i}>{part}</span>
+        : part
+    );
+  }
+
+  function SectionTitle({ title }) {
+    return (
+      <div className="section-title">
+        <span>{title}</span>
+        <div />
+      </div>
+    );
+  }
+
+  function ResumeList({ items }) {
+    return (
+      <ul className="resume-list">
+        {items.map((item, i) => (
+          <li key={i}><HighlightText text={item} /></li>
+        ))}
+      </ul>
+    );
+  }
+
+  const experiences = [
+    {
+      title: "Multita Co.,Ltd. — Software Developer",
+      date: "Jul 2022 – Present",
+      meta: "Full-time · Remote (Udon Thani / Khon Kaen)",
+      salary: "Salary: 20,000 THB / month",
+      intro: "Key Responsibilities:",
+      bullets: [
+        "Full-Stack Development: Designed and delivered enterprise Web Applications using Angular (TypeScript) + SyncFusion / DevExtreme on the frontend, backed by .NET (C#) RESTful APIs — serving clients in Healthcare, Insurance, and Retail verticals.",
+        "Business Intelligence: Architected large-scale data pipelines and built advanced Tableau Dashboards for Cash Conversion Cost analysis, enabling Finance teams to monitor cash flow in near-real-time.",
+        "Mobile Development: Built and maintained Android sales and motor-insurance applications using Java (Android Studio).",
+      ],
+      projectsTitle: "Notable Projects:",
+      projects: [
+        "Sikarin Hospital — HIS Module: Developed complex patient-data management modules within the Hospital Information System using Angular + .NET.",
+        "IRPC (Energy Sector) — BI Reporting: Led Tableau development for executive-level insight reports supporting strategic decision-making across refinery operations.",
+        "TQM & Viriyah Insurance — Motor Insurance Platform: Built high-traffic Frontend for car insurance workflows.",
+        "PUMPUI — Retail POS System: Delivered a full sales and inventory management solution to improve operational efficiency.",
+      ],
+    },
+    {
+      title: "Freelance & Technical Consultant",
+      date: "Sep 2023 – Present",
+      meta: "Self-employed · Remote",
+      salary: "Est. Income: 20,000 – 40,000 THB / month",
+      bullets: [
+        "Multi-Framework Full-Stack: Delivered client projects using Angular / DevExtreme for complex enterprise UIs and React / Next.js for SEO-optimized, high-performance public-facing websites.",
+        "Backend & API Design: Designed and built scalable RESTful APIs with .NET (C#) and Node.js, connecting to SQL/NoSQL databases with clean, maintainable architecture.",
+        "Technical Consulting: Translated ambiguous business requirements into clear technical specs and working digital products.",
+      ],
+    },
+    {
+      title: "CHAREON TUT Co.,Ltd. — Full Stack Developer (Intern)",
+      date: "Nov 2021 – Feb 2022",
+      meta: "Internship · Pathum Thani",
+      bullets: [
+        "Frontend: Implemented pixel-perfect UIs with Angular (TypeScript, HTML, SCSS) aligned to design specifications.",
+        "Backend: Built server-side modules using Java + Spring Boot (MVC architecture).",
+        "SDLC Exposure: Participated in the full software development lifecycle — from logic analysis through implementation and QA.",
+      ],
+    },
+  ];
+
+  const skillGroups = [
+    { title: "FRONTEND", skills: [{ name: "Angular (TypeScript)" }, { name: "React" }, { name: "Next.js" }, { name: "DevExtreme" }, { name: "SyncFusion" }, { name: "HTML / CSS / SCSS" }] },
+    { title: "BACKEND", skills: [{ name: ".NET (C#)" }, { name: "RESTful API" }, { name: "Node.js" }, { name: "Spring Boot (Java)" }] },
+    { title: "DATA & BI", skills: [{ name: "Tableau" }, { name: "SQL / MSSQL" }, { name: "Data Modeling" }] },
+    { title: "AI & TOOLS", skills: [{ name: "AI-Assisted Dev" }, { name: "Prompt Engineering" }, { name: "Git & GitHub" }, { name: "Postman" }] },
+  ];
+
   return (
     <>
-      {!isPdf ? (
-        <nav className="resume-nav" aria-label="Resume navigation">
-          <div className="container">
-            <div className="nav-shell">
-              <a className="brand-link" href="#summary" aria-label="Go to resume summary">
-                SC
-              </a>
-              <div className="nav-links" aria-label="Resume sections">
-                {navItems.map((item) => (
-                  <a href={item.href} key={item.href}>
-                    {item.label}
-                  </a>
-                ))}
+      <section className="hero-section" id="summary">
+        <div className="container">
+          <div className="hero-card">
+            <div className="row g-4 align-items-center">
+              <div className="col-lg-5">
+                <div className="identity-card">
+                  <div className="avatar-frame">
+                    <img alt="Satja Chaiseanpha" className="avatar-photo" src="/profile-satja.png" />
+                  </div>
+                  <p className="eyebrow mb-2">Software Developer</p>
+                  <h1>
+                    <span>SATJA CHAISEANPHA</span>
+                    <span>(FLUKE)</span>
+                  </h1>
+                </div>
               </div>
-              <DownloadButton />
+              <div className="col-lg-7">
+                <div className="hero-copy">
+                  <div className="contact-strip">
+                    <a href="mailto:knownaddress90@gmail.com">knownaddress90@gmail.com</a>
+                    <a href="tel:0835014158">083-501-4158</a>
+                    <a href="https://github.com/aminadmin16" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://pf-exam-final.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                    <span>หนองบัวลำภู · Thailand</span>
+                  </div>
+                  <h2>PROFESSIONAL SUMMARY</h2>
+                  <p>
+                    <HighlightText text="Full Stack Developer with 4+ years of hands-on experience delivering production-grade web applications across Healthcare, Energy, Insurance, and Retail sectors. Specialized in .NET (C#) + Angular (TypeScript) for enterprise systems, and React / Next.js for high-performance web. Proven track record building scalable RESTful APIs, advanced Tableau BI dashboards, and leading freelance projects end-to-end." />
+                  </p>
+                  <div className="profile-chips">
+                    {profileHighlights.map((h) => <span key={h}>{h}</span>)}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </nav>
-      ) : null}
+        </div>
+      </section>
 
-      <main className={`resume-page${isPdf ? " resume-page--pdf" : ""}`}>
-        {isPdf ? (
-          <ResumePdfOnePage>
-            <ResumeMainContent />
-          </ResumePdfOnePage>
-        ) : (
-          <div className="resume-export-area" id="resume-export">
-            <ResumeMainContent />
+      <section className="content-section">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-lg-7">
+              <div className="section-card" id="experience">
+                <SectionTitle title="WORK EXPERIENCE" />
+                <div className="timeline">
+                  {experiences.map((exp) => (
+                    <article className="timeline-item" key={exp.title}>
+                      <div className="timeline-dot" />
+                      <div className="d-flex flex-column flex-md-row justify-content-between gap-2">
+                        <h3>{exp.title}</h3>
+                        <time>{exp.date}</time>
+                      </div>
+                      {exp.meta ? <p className="meta">{exp.meta}</p> : null}
+                      {exp.salary ? <p className="salary-line"><span className="salary-badge">{exp.salary}</span></p> : null}
+                      {exp.intro ? <p className="label-line">{exp.intro}</p> : null}
+                      <ResumeList items={exp.bullets} />
+                      {exp.projectsTitle ? (
+                        <>
+                          <p className="label-line mt-3">{exp.projectsTitle}</p>
+                          <ResumeList items={exp.projects} />
+                        </>
+                      ) : null}
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-5">
+              <aside className="sticky-sidebar">
+                <div className="section-card education-card" id="education">
+                  <SectionTitle title="EDUCATION" />
+                  <div className="d-flex justify-content-between gap-3">
+                    <div>
+                      <h3>Udon Thani Rajabhat University</h3>
+                      <p>Bachelor of Science — Computer Science</p>
+                      <p><strong>GPA: 3.14 / 4.00</strong></p>
+                    </div>
+                    <time>2017–2021</time>
+                  </div>
+                </div>
+                <div className="section-card skills-card" id="skills">
+                  <SectionTitle title="SKILLS & TECHNOLOGIES" />
+                  <div className="skill-grid">
+                    {skillGroups.map((group) => (
+                      <div className="skill-group skill-group-plain" key={group.title}>
+                        <h3>{group.title}</h3>
+                        <ul>
+                          {group.skills.map((skill) => (
+                            <li key={skill.name}>
+                              <div className="skill-line"><span>{skill.name}</span></div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </aside>
+            </div>
           </div>
-        )}
-      </main>
+        </div>
+      </section>
     </>
-  );
-}
-
-function SkillGauge({ level, name }) {
-  const barStyle = {
-    "--level": `${level}%`,
-  };
-  const levelLabel = getSkillLevelLabel(level);
-
-  return (
-    <div className="skill-meter-bar" style={barStyle}>
-      <meter aria-label={`${name} ${level}%`} className="visually-hidden" max="100" min="0" value={level}>
-        {level}%
-      </meter>
-      <div className="meter-track">
-        <span className="meter-fill" />
-      </div>
-      <div className="meter-meta">
-        <span>{level}%</span>
-        <small>{levelLabel}</small>
-      </div>
-    </div>
-  );
-}
-
-function getSkillLevelLabel(level) {
-  if (level >= 90) {
-    return "Expert";
-  }
-
-  if (level >= 80) {
-    return "Strong";
-  }
-
-  return "Good";
-}
-
-function SectionTitle({ title }) {
-  return (
-    <div className="section-title">
-      <span>{title}</span>
-      <div />
-    </div>
-  );
-}
-
-function ResumeList({ items }) {
-  return (
-    <ul className="resume-list">
-      {items.map((item) => (
-        <li key={item}>
-          <HighlightText
-            text={item}
-            words={[
-              ".NET",
-              ".NET (C#)",
-              "Angular",
-              "Angular (TypeScript)",
-              "React",
-              "Next.js",
-              "Tableau",
-              "RESTful API",
-              "Java",
-              "Spring Boot",
-              "DevExtreme",
-              "User Interface",
-              "Root Cause Analysis",
-              "Maintainable Code",
-            ]}
-          />
-        </li>
-      ))}
-    </ul>
   );
 }
