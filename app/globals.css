@@ -314,9 +314,9 @@ h1, h2, h3, p { margin-top: 0; }
 /* FIXED: was var(--accent) = same as sidebar bg = invisible */
 .sidebar-section-title {
   color: var(--sidebar-section-title);
-  font-size: 0.61rem;
+  font-size: 0.74rem;
   font-weight: 900;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   margin: 0 0 11px;
   text-transform: uppercase;
 }
@@ -403,9 +403,9 @@ h1, h2, h3, p { margin-top: 0; }
 
 .sidebar-skill-group-name {
   color: var(--sidebar-muted);
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   margin: 0 0 7px;
   text-transform: uppercase;
 }
