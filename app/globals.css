@@ -3,9 +3,9 @@
   --sidebar-bg: #0f5da8;
   --sidebar-text: #ddeeff;
   --sidebar-heading: #ffffff;
-  --sidebar-role: rgba(255, 255, 255, 0.78);
-  --sidebar-section-title: rgba(255, 255, 255, 0.5);
-  --sidebar-muted: rgba(255, 255, 255, 0.55);
+  --sidebar-role: rgba(255, 255, 255, 0.85);
+  --sidebar-section-title: rgba(255, 255, 255, 0.88);
+  --sidebar-muted: rgba(255, 255, 255, 0.68);
   --sidebar-link: #93c5fd;
   --sidebar-border: rgba(255, 255, 255, 0.12);
   --sidebar-tag-bg: rgba(255, 255, 255, 0.12);
