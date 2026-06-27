@@ -379,11 +379,11 @@ export default function ResumeClient() {
                 <article className="exp-card" key={exp.title}>
                   <div className="exp-header">
                     <div>
-                      <div className="exp-title-row">
-                        <h3 className="exp-title">{exp.title}</h3>
+                      <h3 className="exp-title">{exp.title}</h3>
+                      <div className="exp-meta-row">
+                        <span className="exp-meta">{exp.meta}</span>
                         {exp.salary && <span className="salary-badge">{exp.salary}</span>}
                       </div>
-                      <p className="exp-meta">{exp.meta}</p>
                     </div>
                     <time className="exp-date">{exp.date}</time>
                   </div>
@@ -407,7 +407,7 @@ export default function ResumeClient() {
               <div className="edu-card">
                 <div>
                   <h3>{c.education.school}</h3>
-                  <p>{c.education.degree}</p>
+                  <p className="edu-meta">{c.education.degree}</p>
                   <p><strong>{c.education.gpa}</strong></p>
                   <p className="edu-note">{c.education.note}</p>
                 </div>
