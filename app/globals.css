@@ -226,6 +226,7 @@ h1, h2, h3, p { margin-top: 0; }
   overflow-y: auto;
   padding: 36px 24px 56px;
   position: sticky;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
   top: var(--nav-h);
   width: var(--sidebar-w);
 }

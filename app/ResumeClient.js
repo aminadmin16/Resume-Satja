@@ -30,12 +30,12 @@ const skillGroups = [
   },
   {
     key: "data",
-    title: { en: "Data & BI", th: "ข้อมูลและ BI" },
+    title: { en: "Data & BI", th: "Data & BI" },
     skills: ["Tableau", "SQL / MSSQL", "Data Modeling"],
   },
   {
     key: "ai",
-    title: { en: "AI & Tools", th: "AI และเครื่องมือ" },
+    title: { en: "AI & Tools", th: "AI & Tools" },
     skills: ["AI-Assisted Dev", "Prompt Engineering", "ChatGPT API", "Git & GitHub", "Postman", "Arduino (IoT)"],
   },
 ];
