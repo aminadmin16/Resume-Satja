@@ -379,16 +379,14 @@ export default function ResumeClient() {
                 <article className="exp-card" key={exp.title}>
                   <div className="exp-header">
                     <div>
-                      <h3 className="exp-title">{exp.title}</h3>
+                      <div className="exp-title-row">
+                        <h3 className="exp-title">{exp.title}</h3>
+                        {exp.salary && <span className="salary-badge">{exp.salary}</span>}
+                      </div>
                       <p className="exp-meta">{exp.meta}</p>
                     </div>
                     <time className="exp-date">{exp.date}</time>
                   </div>
-                  {exp.salary && (
-                    <div className="salary-line">
-                      <span className="salary-badge">{exp.salary}</span>
-                    </div>
-                  )}
                   {exp.intro && <p className="exp-intro">{exp.intro}</p>}
                   <ResumeList items={exp.bullets} />
                   {exp.projectsTitle && (

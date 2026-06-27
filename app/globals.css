@@ -632,8 +632,17 @@ h1, h2, h3, p { margin-top: 0; }
   white-space: nowrap;
 }
 
-.salary-line {
-  margin: 9px 0 0;
+/* Title + salary on same line */
+.exp-title-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.exp-title-row .exp-title {
+  margin: 0;
 }
 
 .salary-badge {
