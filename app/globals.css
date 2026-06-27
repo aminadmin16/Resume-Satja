@@ -823,8 +823,95 @@ h1, h2, h3, p { margin-top: 0; }
 .resume-page--pdf { padding-top: 0; }
 .resume-page--pdf .resume-sidebar { height: auto; position: static; }
 
+/* ── PRINT / A4 ── */
 @media print {
-  .top-nav { display: none; }
-  .resume-wrapper { padding-top: 0; }
-  .resume-sidebar { height: auto; position: static; }
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  /* Preserve all colors & backgrounds exactly */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide non-printable chrome */
+  .top-nav,
+  .sidebar-close,
+  .sidebar-overlay,
+  .hamburger,
+  .download-button,
+  .lang-toggle,
+  .nav-center { display: none !important; }
+
+  /* Remove nav offset */
+  .resume-root { min-height: auto; }
+  .resume-wrapper {
+    display: flex !important;
+    min-height: auto !important;
+    padding-top: 0 !important;
+  }
+
+  /* Sidebar — static, fixed A4-friendly width */
+  .resume-sidebar {
+    box-shadow: none !important;
+    flex-shrink: 0 !important;
+    height: auto !important;
+    left: auto !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    padding: 20px 14px 20px !important;
+    position: static !important;
+    text-shadow: none !important;
+    top: auto !important;
+    transition: none !important;
+    width: 64mm !important;
+  }
+
+  /* Sidebar avatar: smaller for print */
+  .sidebar-avatar { height: 80px !important; width: 80px !important; }
+  .sidebar-name { font-size: 0.9rem !important; }
+  .sidebar-role { font-size: 0.6rem !important; }
+
+  /* Main content */
+  .resume-main {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 18px 16px 16px !important;
+  }
+
+  /* Force all collapsed sections to show */
+  .section-body,
+  .section-body--closed {
+    display: block !important;
+    grid-template-rows: 1fr !important;
+  }
+
+  .section-body-inner { overflow: visible !important; }
+
+  /* Section title: hide chevron, keep centered */
+  .section-chevron,
+  .section-title-side { display: none !important; }
+  .section-title { justify-content: center !important; }
+
+  /* Remove shadows & hover transforms */
+  .exp-card,
+  .edu-card {
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Keep cards together — avoid splitting across pages */
+  .exp-card { break-inside: avoid; page-break-inside: avoid; }
+  .edu-card { break-inside: avoid; page-break-inside: avoid; }
+  .main-section { break-inside: avoid; page-break-inside: avoid; }
+
+  /* Tighten spacing for print */
+  .main-section { margin-bottom: 20px !important; }
+  .exp-card { margin-bottom: 10px !important; }
+  .section-title { margin-bottom: 10px !important; padding: 7px 18px !important; }
+  .resume-list { font-size: 0.8rem !important; line-height: 1.55 !important; }
+  .summary-text { font-size: 0.85rem !important; line-height: 1.65 !important; }
 }
