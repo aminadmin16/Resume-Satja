@@ -501,28 +501,31 @@ h1, h2, h3, p { margin-top: 0; }
   padding: 40px 48px 80px;
 }
 
+/* ── SECTION GROUPS — each section is a card ── */
 .main-section {
-  margin-bottom: 52px;
+  background: var(--card-bg);
+  border: 1.5px solid #c4dfe6;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 24px;
+  overflow: hidden;
 }
 
-/* Summary — clean, no box */
-.main-section--hero {
-  background: none;
-  border: none;
-  padding: 0;
+/* Section content body */
+.section-content {
+  padding: 20px 24px 24px;
 }
 
-/* ── SECTION TITLE — full teal bar ── */
+/* ── SECTION TITLE — teal header bar flush with card top ── */
 .section-title {
   align-items: center;
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   display: flex;
   justify-content: center;
-  margin-bottom: 22px;
-  padding: 10px 20px;
-  transition: opacity var(--transition);
+  margin-bottom: 0;
+  padding: 11px 20px;
 }
 
 .section-title::before { display: none; }
@@ -537,55 +540,6 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 .section-title div { display: none; }
-
-/* Clickable variant */
-.section-title--clickable {
-  cursor: pointer;
-  user-select: none;
-}
-
-.section-title--clickable:hover { opacity: 0.88; }
-
-/* Spacer — mirrors chevron width to keep title visually centered */
-.section-title-side {
-  flex: 0 0 20px;
-}
-
-/* Chevron arrow */
-.section-chevron {
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid rgba(255, 255, 255, 0.9);
-  display: block;
-  flex-shrink: 0;
-  height: 0;
-  transition: transform 0.32s ease;
-  width: 0;
-}
-
-.section-chevron--collapsed {
-  transform: rotate(-90deg);
-}
-
-/* ── COLLAPSIBLE SECTION BODY ── */
-.section-body {
-  display: grid;
-  grid-template-rows: 1fr;
-  transition: grid-template-rows 0.36s ease;
-}
-
-.section-body--closed {
-  grid-template-rows: 0fr;
-}
-
-.section-body-inner {
-  overflow: hidden;
-}
-
-/* Re-add bottom spacing after section-body (replaces margin on section-body-inner) */
-.section-body-inner > *:last-child {
-  margin-bottom: 0;
-}
 
 /* Profile summary */
 .summary-text {
@@ -615,21 +569,22 @@ h1, h2, h3, p { margin-top: 0; }
 
 /* ── EXPERIENCE CARDS — rounded, soft ── */
 .exp-card {
-  background: var(--card-bg);
-  border: 1.5px solid #c4dfe6;
-  border-radius: var(--radius);
+  background: #f7fbfc;
+  border: 1.5px solid #d4e8ef;
+  border-radius: calc(var(--radius) - 4px);
   border-top: 3px solid var(--accent);
-  box-shadow: var(--shadow-card);
-  margin-bottom: 20px;
-  padding: 22px 24px;
-  transition: box-shadow var(--transition), transform var(--transition);
+  margin-bottom: 14px;
+  padding: 18px 20px;
+  transition: background var(--transition), border-color var(--transition);
 }
 
 .exp-card::after { display: none; }
 
+.exp-card:last-child { margin-bottom: 0; }
+
 .exp-card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
+  background: #f0f8fb;
+  border-color: #b8dde9;
 }
 
 /* Card header — with separator */
@@ -721,22 +676,18 @@ h1, h2, h3, p { margin-top: 0; }
 
 /* ── EDUCATION CARD — rounded, gold left touch ── */
 .edu-card {
-  background: var(--card-bg);
-  border: 1.5px solid #c4dfe6;
-  border-radius: var(--radius);
+  background: #f7fbfc;
+  border: 1.5px solid #d4e8ef;
+  border-radius: calc(var(--radius) - 4px);
   border-top: 3px solid var(--gold);
-  box-shadow: var(--shadow-card);
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  padding: 22px 24px;
-  transition: box-shadow var(--transition), transform var(--transition);
+  padding: 18px 20px;
+  transition: background var(--transition);
 }
 
-.edu-card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
-}
+.edu-card:hover { background: #f0f8fb; }
 
 .edu-card h3 {
   color: var(--accent);
@@ -881,19 +832,14 @@ h1, h2, h3, p { margin-top: 0; }
     padding: 18px 16px 16px !important;
   }
 
-  /* Force all collapsed sections to show */
-  .section-body,
-  .section-body--closed {
-    display: block !important;
-    grid-template-rows: 1fr !important;
+  /* Section cards: remove shadow in print */
+  .main-section {
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
-  .section-body-inner { overflow: visible !important; }
-
-  /* Section title: hide chevron, keep centered */
-  .section-chevron,
-  .section-title-side { display: none !important; }
-  .section-title { justify-content: center !important; }
+  .section-content { padding: 12px 16px 16px !important; }
 
   /* Remove shadows & hover transforms */
   .exp-card,
