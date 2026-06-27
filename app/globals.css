@@ -512,21 +512,24 @@ h1, h2, h3, p { margin-top: 0; }
   padding: 0;
 }
 
-/* ── SECTION TITLE — full teal bar (like reference) ── */
+/* ── SECTION TITLE — full teal bar ── */
 .section-title {
   align-items: center;
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+  border: none;
   border-radius: var(--radius-sm);
   display: flex;
   justify-content: center;
   margin-bottom: 22px;
-  padding: 10px 24px;
+  padding: 10px 20px;
+  transition: opacity var(--transition);
 }
 
 .section-title::before { display: none; }
 
 .section-title span {
   color: #ffffff;
+  font-family: inherit;
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.22em;
@@ -534,6 +537,55 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 .section-title div { display: none; }
+
+/* Clickable variant */
+.section-title--clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.section-title--clickable:hover { opacity: 0.88; }
+
+/* Spacer — mirrors chevron width to keep title visually centered */
+.section-title-side {
+  flex: 0 0 20px;
+}
+
+/* Chevron arrow */
+.section-chevron {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid rgba(255, 255, 255, 0.9);
+  display: block;
+  flex-shrink: 0;
+  height: 0;
+  transition: transform 0.32s ease;
+  width: 0;
+}
+
+.section-chevron--collapsed {
+  transform: rotate(-90deg);
+}
+
+/* ── COLLAPSIBLE SECTION BODY ── */
+.section-body {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.36s ease;
+}
+
+.section-body--closed {
+  grid-template-rows: 0fr;
+}
+
+.section-body-inner {
+  overflow: hidden;
+}
+
+/* Re-add bottom spacing after section-body (replaces margin on section-body-inner) */
+.section-body-inner > *:last-child {
+  margin-bottom: 0;
+}
 
 /* Profile summary */
 .summary-text {

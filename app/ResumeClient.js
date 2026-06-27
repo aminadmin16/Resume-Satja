@@ -195,11 +195,24 @@ function HighlightText({ text }) {
   );
 }
 
-function SectionTitle({ title }) {
+function SectionTitle({ title, collapsed, onToggle }) {
   return (
-    <div className="section-title">
+    <div
+      className={`section-title${onToggle ? " section-title--clickable" : ""}`}
+      onClick={onToggle}
+      role={onToggle ? "button" : undefined}
+      tabIndex={onToggle ? 0 : undefined}
+      onKeyDown={onToggle ? (e) => e.key === "Enter" && onToggle() : undefined}
+      aria-expanded={onToggle ? !collapsed : undefined}
+    >
+      <span className="section-title-side" aria-hidden="true" />
       <span>{title}</span>
-      <div />
+      {onToggle && (
+        <span
+          className={`section-chevron${collapsed ? " section-chevron--collapsed" : ""}`}
+          aria-hidden="true"
+        />
+      )}
     </div>
   );
 }
@@ -217,6 +230,8 @@ function ResumeList({ items }) {
 export default function ResumeClient() {
   const [lang, setLang] = useState("en");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState({});
+  const toggle = (key) => setCollapsed(prev => ({ ...prev, [key]: !prev[key] }));
   const c = content[lang];
 
   return (
@@ -361,55 +376,79 @@ export default function ResumeClient() {
         <main className="resume-main">
           {/* Summary */}
           <section className="main-section main-section--hero" id="summary">
-            <SectionTitle title={c.sections.summary} />
-            <p className="summary-text">
-              <HighlightText text={c.profileSummary} />
-            </p>
-            <div className="profile-chips" aria-label="Key skills">
-              {profileHighlights.map((h) => <span key={h}>{h}</span>)}
+            <SectionTitle
+              title={c.sections.summary}
+              collapsed={collapsed.summary}
+              onToggle={() => toggle("summary")}
+            />
+            <div className={`section-body${collapsed.summary ? " section-body--closed" : ""}`}>
+              <div className="section-body-inner">
+                <p className="summary-text">
+                  <HighlightText text={c.profileSummary} />
+                </p>
+                <div className="profile-chips" aria-label="Key skills">
+                  {profileHighlights.map((h) => <span key={h}>{h}</span>)}
+                </div>
+              </div>
             </div>
           </section>
 
           {/* Experience */}
           <section className="main-section" id="experience">
-            <SectionTitle title={c.sections.experience} />
-            {c.experiences.map((exp) => (
-              <article className="exp-card" key={exp.title}>
-                <div className="exp-header">
-                  <div>
-                    <h3 className="exp-title">{exp.title}</h3>
-                    <p className="exp-meta">{exp.meta}</p>
-                  </div>
-                  <time className="exp-date">{exp.date}</time>
-                </div>
-                {exp.salary && (
-                  <div className="salary-line">
-                    <span className="salary-badge">{exp.salary}</span>
-                  </div>
-                )}
-                {exp.intro && <p className="exp-intro">{exp.intro}</p>}
-                <ResumeList items={exp.bullets} />
-                {exp.projectsTitle && (
-                  <>
-                    <p className="exp-intro">{exp.projectsTitle}</p>
-                    <ResumeList items={exp.projects} />
-                  </>
-                )}
-              </article>
-            ))}
+            <SectionTitle
+              title={c.sections.experience}
+              collapsed={collapsed.experience}
+              onToggle={() => toggle("experience")}
+            />
+            <div className={`section-body${collapsed.experience ? " section-body--closed" : ""}`}>
+              <div className="section-body-inner">
+                {c.experiences.map((exp) => (
+                  <article className="exp-card" key={exp.title}>
+                    <div className="exp-header">
+                      <div>
+                        <h3 className="exp-title">{exp.title}</h3>
+                        <p className="exp-meta">{exp.meta}</p>
+                      </div>
+                      <time className="exp-date">{exp.date}</time>
+                    </div>
+                    {exp.salary && (
+                      <div className="salary-line">
+                        <span className="salary-badge">{exp.salary}</span>
+                      </div>
+                    )}
+                    {exp.intro && <p className="exp-intro">{exp.intro}</p>}
+                    <ResumeList items={exp.bullets} />
+                    {exp.projectsTitle && (
+                      <>
+                        <p className="exp-intro">{exp.projectsTitle}</p>
+                        <ResumeList items={exp.projects} />
+                      </>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
           </section>
 
           {/* Education */}
           <section className="main-section" id="education">
-            <SectionTitle title={c.sections.education} />
-            <div className="edu-card">
-              <div>
-                <h3>{c.education.school}</h3>
-                <p>{c.education.degree}</p>
-                <p><strong>{c.education.gpa}</strong></p>
-                <p className="edu-note">{c.education.note}</p>
+            <SectionTitle
+              title={c.sections.education}
+              collapsed={collapsed.education}
+              onToggle={() => toggle("education")}
+            />
+            <div className={`section-body${collapsed.education ? " section-body--closed" : ""}`}>
+              <div className="section-body-inner">
+                <div className="edu-card">
+                  <div>
+                    <h3>{c.education.school}</h3>
+                    <p>{c.education.degree}</p>
+                    <p><strong>{c.education.gpa}</strong></p>
+                    <p className="edu-note">{c.education.note}</p>
+                  </div>
+                  <time>{c.education.date}</time>
+                </div>
               </div>
-              <time>{c.education.date}</time>
             </div>
           </section>
         </main>
