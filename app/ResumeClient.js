@@ -360,7 +360,7 @@ export default function ResumeClient() {
         {/* ── MAIN ── */}
         <main className="resume-main">
           {/* Summary */}
-          <section className="main-section" id="summary">
+          <section className="main-section main-section--hero" id="summary">
             <SectionTitle title={c.sections.summary} />
             <p className="summary-text">
               <HighlightText text={c.profileSummary} />
