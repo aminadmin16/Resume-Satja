@@ -99,7 +99,7 @@ export const content = {
           "Survey & Cost Analysis: Surveyed each site, measured cable runs, and prepared a bill of materials with 2–3 budget options (cost vs. coverage vs. equipment lifespan) so the customer could decide with clear trade-offs before purchasing.",
           "Network Installation: Ran and terminated UTP Cat5e/Cat6 with RJ-45, mounted switches and access points, and configured routers — WAN/PPPoE, LAN subnet, DHCP, Wi-Fi SSID & security, port forwarding, and channel planning to reduce interference.",
           "CCTV Installation: Delivered IP and analog camera systems end-to-end — camera placement to remove blind spots, PoE/power wiring, NVR/DVR setup, storage and retention planning, motion recording, and remote viewing on mobile.",
-          "Testing, Handover & Training: Verified every link with a LAN tester, labeled ports and cable runs, delivered a layout diagram and credential sheet, and trained users on playback, clip export, Wi-Fi changes, and first-line troubleshooting — running each job solo from quotation through warranty follow-up.",
+          // "Testing, Handover & Training: Verified every link with a LAN tester, labeled ports and cable runs, delivered a layout diagram and credential sheet, and trained users on playback, clip export, Wi-Fi changes, and first-line troubleshooting — running each job solo from quotation through warranty follow-up.",
         ],
       },
       {
@@ -181,7 +181,7 @@ export const content = {
           "สำรวจหน้างานและวิเคราะห์ต้นทุน: สำรวจพื้นที่ วัดระยะเดินสาย ประเมินจุดติดตั้ง แล้วจัดทำรายการอุปกรณ์พร้อมทางเลือกงบประมาณ 2–3 แบบ เปรียบเทียบราคา ความครอบคลุม และอายุการใช้งาน เพื่อให้ลูกค้าตัดสินใจได้บนข้อมูลที่ชัดเจนก่อนสั่งซื้อ",
           "ติดตั้งระบบเครือข่าย: เดินสายและเข้าหัว UTP Cat5e/Cat6 (RJ-45), ติดตั้ง Switch และ Access Point, ตั้งค่า Router ทั้ง WAN/PPPoE, LAN Subnet, DHCP, ตั้งชื่อและรหัส Wi-Fi, Port Forwarding รวมถึงเลือกช่องสัญญาณเพื่อลดการรบกวน",
           "ติดตั้งระบบกล้องวงจรปิด: ติดตั้งกล้อง IP และ Analog ครบวงจร ตั้งแต่วางตำแหน่งกล้องให้ครอบคลุมจุดอับ เดินสายไฟ/PoE ตั้งค่า NVR/DVR วางแผนความจุและระยะเวลาย้อนหลัง ตั้งค่าบันทึกตามการเคลื่อนไหว และดูผ่านมือถือจากภายนอกได้",
-          "ทดสอบ ส่งมอบ และสอนการใช้งาน: ทดสอบสายทุกเส้นด้วย LAN Tester ติดป้ายกำกับพอร์ตและแนวสาย ส่งมอบแผนผังการติดตั้งพร้อมข้อมูลอุปกรณ์/รหัสผ่าน และสอนลูกค้าดูภาพย้อนหลัง ดึงคลิป เปลี่ยนรหัส Wi-Fi และแก้ปัญหาเบื้องต้น โดยดูแลเองทั้งหมดตั้งแต่เสนอราคาจนถึงรับประกันหลังการขาย",
+          // "ทดสอบ ส่งมอบ และสอนการใช้งาน: ทดสอบสายทุกเส้นด้วย LAN Tester ติดป้ายกำกับพอร์ตและแนวสาย ส่งมอบแผนผังการติดตั้งพร้อมข้อมูลอุปกรณ์/รหัสผ่าน และสอนลูกค้าดูภาพย้อนหลัง ดึงคลิป เปลี่ยนรหัส Wi-Fi และแก้ปัญหาเบื้องต้น โดยดูแลเองทั้งหมดตั้งแต่เสนอราคาจนถึงรับประกันหลังการขาย",
         ],
       },
       {
