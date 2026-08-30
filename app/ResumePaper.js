@@ -91,7 +91,7 @@ export default function ResumePaper({ lang = "en" }) {
     { label: "Online Resume", href: "https://resume-satja.vercel.app", text: "resume-satja.vercel.app" },
     { label: "Exam (Next.js)", href: "https://pf-exam-final.vercel.app", text: "pf-exam-final.vercel.app" },
     { label: "Smart Serve (POS)", href: "https://pf-smart-serve.vercel.app/", text: "pf-smart-serve.vercel.app" },
-    { label: "Exam (Computer)", href: "https://pf-exam-computer.vercel.app/", text: "pf-exam-computer.vercel.app" },
+    // { label: "Exam (Computer)", href: "https://pf-exam-computer.vercel.app/", text: "pf-exam-computer.vercel.app" },
   ];
 
   return (
