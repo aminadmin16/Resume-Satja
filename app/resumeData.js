@@ -60,7 +60,7 @@ export const skillGroups = [
 
 export const content = {
   en: {
-    eyebrow: "Software Developer",
+    eyebrow: "Software Developer   Software Engineer   AI Solutions Engineer",
     profileSummary:
       "Full Stack Developer with 4+ years of hands-on experience delivering production-grade web applications across Healthcare, Energy, Insurance, and Retail sectors. Specialized in .NET (C#) + Angular (TypeScript) for enterprise systems, and React / Next.js for high-performance web. Proven track record building scalable RESTful APIs, advanced Tableau BI dashboards, and leading freelance projects end-to-end. Works daily with AI tools (Claude, ChatGPT, Gemini, Kimi) to engineer precise, logic-driven outputs, and takes on network & CCTV installation on weekends.",
     navItems: [
@@ -142,7 +142,7 @@ export const content = {
   },
 
   th: {
-    eyebrow: "นักพัฒนาซอฟต์แวร์",
+    eyebrow: "นักพัฒนาซอฟต์แวร์   วิศวกรซอฟต์แวร์   วิศวกรโซลูชัน AI",
     profileSummary:
       "Full Stack Developer ประสบการณ์ 4+ ปี ในการพัฒนา Web Application ระดับ Production สำหรับธุรกิจหลากหลายอุตสาหกรรม ทั้ง Healthcare, Energy, Insurance และ Retail เชี่ยวชาญ .NET (C#) + Angular (TypeScript) สำหรับระบบ Enterprise และ React / Next.js สำหรับเว็บที่เน้นประสิทธิภาพสูง มีผลงานพิสูจน์ได้ในการสร้าง RESTful API ที่รองรับการขยายตัว, Tableau BI Dashboard ขั้นสูง และบริหารโปรเจค Freelance ได้ครบวงจร ใช้เครื่องมือ AI (Claude, ChatGPT, Gemini, Kimi) ในการทำงานประจำวัน โดยเน้นควบคุมผลลัพธ์ให้ถูกต้องและตรงตาม Logic ของธุรกิจ นอกจากนี้ยังรับงานติดตั้งระบบ Network และกล้องวงจรปิดในวันหยุด",
     navItems: [
