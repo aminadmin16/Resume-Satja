@@ -107,7 +107,13 @@ export default function ResumePaper({ lang = "en" }) {
               <img alt="Satja Chaiseanpha" className="photo" src="/profile-satja.png" />
             </div>
 
-            <h1 className="person-name">SATJA<br />CHAISEANPHA</h1>
+            <h1 className="person-name">
+              {lang === 'th' ? (
+                <>สัจจา<br />ชัยแสนพา</>
+              ) : (
+                <>SATJA<br />CHAISEANPHA</>
+              )}
+            </h1>
 
             <h2 className="block-title" id="contact">{c.sections.contact}</h2>
             <ul className="contact-list">
