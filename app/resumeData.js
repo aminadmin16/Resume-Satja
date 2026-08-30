@@ -54,7 +54,7 @@ export const skillGroups = [
   {
     key: "network",
     title: { en: "Network & Hardware", th: "เครือข่ายและฮาร์ดแวร์" },
-    skills: ["LAN / Cat6 Cabling", "Router & Switch Config", "Wi-Fi / Access Point", "CCTV (IP / Analog)", "NVR / DVR", "PoE Wiring", "Arduino (IoT)"],
+    skills: ["LAN / Cat6 Cabling", "Router & Switch Config", "Wi-Fi / Access Point", "CCTV (IP / Analog)", "Arduino (IoT)"],
   },
 ];
 
@@ -82,7 +82,7 @@ export const content = {
         title: "Freelance & Technical Consultant",
         date: "Sep 2023 – Present",
         meta: "Self-employed · Remote",
-        salary: "Est. Income: 20,000 – 40,000 THB / month",
+        // salary: "Est. Income: 20,000 – 40,000 THB / month",
         bullets: [
           "Multi-Framework Full-Stack: Delivered client projects using Angular / DevExtreme for complex enterprise UIs and React / Next.js for SEO-optimized, high-performance public-facing websites.",
           "Backend & API Design: Designed and built scalable RESTful APIs with .NET (C#) and Node.js, connecting to SQL/NoSQL databases with clean, maintainable architecture.",
@@ -93,7 +93,7 @@ export const content = {
         title: "Network & CCTV Installation — Independent Technician",
         date: "Mar 2026 – Present",
         meta: "Part-time · Weekends & spare time · Nong Bua Lamphu / Udon Thani",
-        salary: "Per-project basis",
+        // salary: "Per-project basis",
         intro: "Scope & Responsibilities:",
         bullets: [
           "Survey & Cost Analysis: Surveyed each site, measured cable runs, and prepared a bill of materials with 2–3 budget options (cost vs. coverage vs. equipment lifespan) so the customer could decide with clear trade-offs before purchasing.",
@@ -106,7 +106,7 @@ export const content = {
         title: "Multita Co.,Ltd. — Software Developer",
         date: "Jul 2022 – Jul 2026",
         meta: "Full-time · Remote (Udon Thani / Khon Kaen)",
-        salary: "Salary: 20,000 THB / month",
+        // salary: "Salary: 20,000 THB / month",
         intro: "Key Responsibilities:",
         bullets: [
           "Full-Stack Development: Designed and delivered enterprise Web Applications using Angular (TypeScript) + SyncFusion / DevExtreme on the frontend, backed by .NET (C#) RESTful APIs — serving clients in Healthcare, Insurance, and Retail verticals.",
@@ -164,7 +164,7 @@ export const content = {
         title: "รับงานอิสระและที่ปรึกษาด้านซอฟต์แวร์ (Freelance & Consultant)",
         date: "ก.ย. 2566 – ปัจจุบัน",
         meta: "อิสระ · Remote",
-        salary: "รายได้โดยประมาณ: 20,000 – 40,000 บาท / เดือน",
+        // salary: "รายได้โดยประมาณ: 20,000 – 40,000 บาท / เดือน",
         bullets: [
           "Multi-Framework Full-Stack: พัฒนา Web Application ด้วย Angular/DevExtreme สำหรับ Enterprise UI ที่ซับซ้อน และ React/Next.js สำหรับเว็บที่เน้น SEO และความเร็ว",
           "Backend & API Design: ออกแบบและพัฒนา RESTful API ที่รองรับการขยายตัวด้วย .NET (C#) และ Node.js เชื่อมต่อกับฐานข้อมูลอย่างมีประสิทธิภาพ",
@@ -175,7 +175,7 @@ export const content = {
         title: "รับติดตั้งระบบ Network และ CCTV (ช่างอิสระ)",
         date: "มี.ค. 2569 – ปัจจุบัน",
         meta: "งานเสริม · เสาร์–อาทิตย์ และช่วงเวลาว่าง · หนองบัวลำภู / อุดรธานี",
-        salary: "คิดค่าบริการเป็นรายงาน (ต่อโปรเจค)",
+        // salary: "คิดค่าบริการเป็นรายงาน (ต่อโปรเจค)",
         intro: "ขอบเขตงานและความรับผิดชอบ:",
         bullets: [
           "สำรวจหน้างานและวิเคราะห์ต้นทุน: สำรวจพื้นที่ วัดระยะเดินสาย ประเมินจุดติดตั้ง แล้วจัดทำรายการอุปกรณ์พร้อมทางเลือกงบประมาณ 2–3 แบบ เปรียบเทียบราคา ความครอบคลุม และอายุการใช้งาน เพื่อให้ลูกค้าตัดสินใจได้บนข้อมูลที่ชัดเจนก่อนสั่งซื้อ",
@@ -188,7 +188,7 @@ export const content = {
         title: "บริษัท มัลติต้า จำกัด — นักพัฒนาซอฟต์แวร์",
         date: "ก.ค. 2565 – ก.ค. 2569",
         meta: "พนักงานประจำ · Remote (อุดรธานี / ขอนแก่น)",
-        salary: "เงินเดือน: 20,000 บาท / เดือน",
+        // salary: "เงินเดือน: 20,000 บาท / เดือน",
         intro: "หน้าที่และความรับผิดชอบ:",
         bullets: [
           "Full-Stack Development: ออกแบบและพัฒนา Web Application สำหรับองค์กรด้วย Angular (TypeScript) + SyncFusion / DevExtreme ฝั่ง Frontend และ .NET (C#) RESTful API ฝั่ง Backend ให้กับลูกค้าในกลุ่ม Healthcare, Insurance และ Retail",
