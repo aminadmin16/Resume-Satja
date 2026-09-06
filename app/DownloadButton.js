@@ -36,8 +36,9 @@ export default function DownloadButton() {
   };
 
   return (
-    <button className="download-button" disabled={isExporting} onClick={handleDownload} type="button">
-      {isExporting ? "Exporting PDF..." : "Download Resume"}
-    </button>
+    <p></p>
+    // <button className="download-button" disabled={isExporting} onClick={handleDownload} type="button">
+    //   {isExporting ? "Exporting PDF..." : "Download Resume"}
+    // </button>
   );
 }
