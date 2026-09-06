@@ -62,7 +62,7 @@ export const content = {
   en: {
     eyebrow: "Software Developer",
     profileSummary:
-      "Full Stack Developer with 4+ years of hands-on experience delivering production-grade web applications across Healthcare, Energy, Insurance, and Retail sectors. Specialized in .NET (C#) + Angular (TypeScript) for enterprise systems, and React / Next.js for high-performance web. Proven track record building scalable RESTful APIs, advanced Tableau BI dashboards, and leading freelance projects end-to-end. Works daily with AI tools (Claude, ChatGPT, Gemini, Kimi) to engineer precise, logic-driven outputs, and takes on network & CCTV installation on weekends.",
+      "Full Stack Developer with 4+ years of hands-on experience delivering production-grade web applications across Healthcare, Energy, Insurance, and Retail sectors. Specialized in .NET (C#) + Angular (TypeScript) for enterprise systems, and React / Next.js for high-performance web. Proven track record building scalable RESTful APIs, advanced Tableau BI dashboards, and leading freelance projects end-to-end. Works daily with AI tools (Claude, ChatGPT, Gemini, Kimi) to engineer precise, logic-driven outputs, and takes on network & CCTV installation ",
     navItems: [
       { href: "#summary", label: "Summary" },
       { href: "#experience", label: "Experience" },
