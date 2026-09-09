@@ -15,8 +15,8 @@
 
 ## เอกสาร PDF
 
-- Resume: เนื้อหาย่อ 1 หน้า + ใบประกาศ 1 หน้า
-- CV: เนื้อหาละเอียด 3 หน้า + ใบประกาศ 1 หน้า
+- Resume: รูปแบบสองคอลัมน์โทนฟ้าตามภาพเดิม 1 หน้า + ใบประกาศ 1 หน้า
+- CV: สรุปเนื้อหา 1 หน้า + ใบประกาศ 1 หน้า
 - ทั้งสองรูปแบบมีภาษาไทยและอังกฤษ เนื้อหาเลือก/ค้นหาข้อความได้ และฝังฟอนต์ไทย
 - ใบประกาศแนบเป็นภาพต้นฉบับบนหน้า A4 แนวนอน รักษาสัดส่วนโดยไม่ตัดภาพ
 - ดาวน์โหลดจาก `public/documents` โดยตรง ไม่ต้องติดตั้ง Chromium บนโฮสต์
@@ -48,7 +48,7 @@ npm run pdf
 npm run build
 ```
 
-ตัวสร้าง PDF ตรวจจำนวนหน้าเนื้อหาโดยอัตโนมัติ และหยุดเมื่อ Resume เกิน 1 หน้า/จำนวนหน้า CV เปลี่ยน เพื่อป้องกันข้อความหลุดหน้าโดยไม่รู้ตัว ตรวจไฟล์จริงใน `public/documents` อีกครั้งหลังเปลี่ยนเนื้อหา ใบประกาศ PDF หลายหน้าจะถูกแนบครบทุกหน้า
+ตัวสร้าง PDF ตรวจจำนวนหน้าเนื้อหาโดยอัตโนมัติ และหยุดเมื่อ Resume เกิน 1 หน้า/CV เกิน 1 หน้า เพื่อป้องกันข้อความหลุดหน้าโดยไม่รู้ตัว ตรวจไฟล์จริงใน `public/documents` อีกครั้งหลังเปลี่ยนเนื้อหา ใบประกาศ PDF หลายหน้าจะถูกแนบครบทุกหน้า
 
 ฟอนต์ Noto Sans Thai ถูกเก็บในเว็บเพื่อใช้งานโดยไม่เรียก Google Fonts ขณะ build; ใบอนุญาตอยู่ใน `public/fonts/OFL.txt`
 
@@ -70,3 +70,8 @@ Image: `public/profile-satja-studio.png`, created with the built-in ImageGen too
 Portrait edit prompt:
 
 > Use case: identity-preserve. Asset type: professional developer portfolio portrait. Input image 1 is the edit target: a photographed old printed portrait. Create exactly ONE restored photographic portrait of this SAME man, strictly preserving his facial identity, facial proportions, distinctive eyes, nose, mouth, jawline, hairstyle, age, skin tone, expression, frontal pose, navy formal suit, white shirt, and dark tie. Do not invent another person, reshape his face, or overly beautify him. Restore natural photographic sharpness and clear detail lost in the photographed print; remove glare, paper texture and white paper border; replace only the bright blue backdrop with a smooth deep charcoal studio background with an extremely subtle dark olive undertone, suited to a #111510 dark and #cefb69 lime portfolio palette. Keep lime out of skin and clothing. Centred upper body and shoulders portrait, ample headroom, vertical 4:5 crop, high resolution, complete top of hair visible. Tasteful soft professional studio light, gentle natural shadows, realistic skin pores and hair detail, restrained retouching, polished but authentic. Preserve the same man's face and facial structure aggressively. No waxy skin, no artificial beauty filter, no added objects, no text, no logos, no watermark.
+
+
+## รูปแบบล่าสุด
+
+เว็บปรับเป็นธีมคลีนขาว/กรมท่า/น้ำเงิน พร้อมแผน UX/UI ใน `UX-PLAN.md` และย้ายผลงานขึ้นก่อนวิธีคิด PUMPUI แก้เป็น Android Studio / Java ทุกภาษาและทุกเอกสาร Resume ใช้ `scripts/classic-resume.mjs` และ `scripts/resume-classic.css`; CV เป็นสรุปคอลัมน์เดียว 1 หน้า ทั้งสองแบบแนบใบประกาศต่อท้าย

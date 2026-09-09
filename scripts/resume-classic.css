@@ -1,0 +1,725 @@
+/* =========================================================
+   SOFT-BLUE A4 RESUME
+   The sheet is a real A4 page: 210 x 297mm, fixed, single page.
+   Typography is in pt so screen and print agree.
+   ========================================================= */
+
+:root {
+  /* Page & sheet */
+  --page-bg-a: #c9d9f4;
+  --page-bg-b: #dfe9fb;
+  --sheet-bg-a: #e4ecf9;
+  --sheet-bg-b: #f0f5fd;
+  --panel: rgba(255, 255, 255, 0.62);
+  --card: #ffffff;
+
+  /* Ink */
+  --ink: #1f2b38;
+  --ink-soft: #4d5966;
+  --ink-muted: #7c8a98;
+  --ink-navy: #24485f;
+
+  /* Lines */
+  --line: #c3d5e6;
+  --line-soft: #dde8f4;
+
+  /* Accent used only to lift tech keywords */
+  --accent: #1d6a86;
+
+  /* A4 geometry */
+  --a4-w: 210mm;
+  --a4-h: 297mm;
+  --sheet-pad: 6.5mm;
+  --col-left: 60mm;
+  --col-gap: 4mm;
+
+  /* Type scale — each step is a rank: name > section > entry > label > body */
+  --fs-name: 15pt;      /* person name                           */
+  --fs-h2: 10.5pt;      /* section heading, right column         */
+  --fs-h2-sm: 9pt;      /* section heading, left card            */
+  --fs-entry: 8.2pt;    /* entry title: job, school, skill group */
+  --fs-label: 7.6pt;    /* sub-label inside an entry             */
+  --fs-body: 6.8pt;     /* body copy, main column                */
+  --fs-side: 6.8pt;     /* body copy, sidebar                    */
+  --fs-side-h: 7.3pt;   /* sidebar sub-heading                   */
+  --fs-meta: 6.6pt;     /* meta / captions                       */
+
+  /* Shape */
+  --r-card: 5mm;
+  --r-pill: 999px;
+  --nav-h: 56px;
+
+  --shadow-card: 0 1mm 3mm rgba(31, 62, 96, 0.07);
+  --shadow-sheet: 0 5mm 16mm rgba(31, 62, 96, 0.16);
+  --transition: 180ms ease;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 24px);
+}
+
+body {
+  background: var(--page-bg-b);
+  color: var(--ink);
+  font-family: "Noto Sans Thai", "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+h1, h2, h3, p, dl, dd { margin-top: 0; }
+
+/* =============== TOP NAV =============== */
+.top-nav {
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom: 1px solid rgba(31, 62, 96, 0.08);
+  display: flex;
+  gap: 12px;
+  height: var(--nav-h);
+  justify-content: space-between;
+  left: 0;
+  padding: 0 24px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 200;
+}
+
+.nav-brand {
+  align-items: center;
+  background: var(--ink-navy);
+  border-radius: 11px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 800;
+  height: 34px;
+  justify-content: center;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: background var(--transition);
+  width: 34px;
+}
+
+.nav-brand:hover { background: #163446; }
+
+.nav-center { display: flex; gap: 2px; }
+
+.nav-center a {
+  border-radius: var(--r-pill);
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  font-weight: 500;
+  padding: 6px 15px;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+}
+
+.nav-center a:hover {
+  background: rgba(36, 72, 95, 0.08);
+  color: var(--ink-navy);
+}
+
+.nav-actions {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.lang-toggle {
+  background: rgba(36, 72, 95, 0.07);
+  border: 1px solid rgba(36, 72, 95, 0.12);
+  border-radius: var(--r-pill);
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  border-radius: var(--r-pill);
+  color: var(--ink-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  padding: 5px 11px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.lang-btn:hover:not(.lang-btn--active) { color: var(--ink-navy); }
+
+.lang-btn--active {
+  background: var(--ink-navy);
+  color: #fff;
+}
+
+.download-button {
+  background: var(--ink-navy);
+  border: none;
+  border-radius: var(--r-pill);
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.79rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.download-button:hover {
+  background: #163446;
+  transform: translateY(-1px);
+}
+
+.download-button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* =============== STAGE (desk the sheet sits on) =============== */
+.resume-root { min-height: 100vh; }
+
+.paper-stage {
+  background:
+    radial-gradient(90% 55% at 8% 4%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(70% 50% at 100% 100%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(160deg, var(--page-bg-a) 0%, var(--page-bg-b) 55%, #cfdcf6 100%);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 28px) 16px 48px;
+}
+
+/* Holds the scaled sheet so the page keeps the right height on small screens */
+.paper-fit {
+  height: calc(var(--a4-h) * var(--paper-scale, 1));
+  width: calc(var(--a4-w) * var(--paper-scale, 1));
+}
+
+.paper-fit .paper {
+  transform: scale(var(--paper-scale, 1));
+  transform-origin: top left;
+}
+
+/* =============== THE A4 SHEET =============== */
+.paper {
+  background: linear-gradient(155deg, var(--sheet-bg-a) 0%, var(--sheet-bg-b) 45%, #e9f0fb 100%);
+  border-radius: 3mm;
+  box-shadow: var(--shadow-sheet);
+  height: var(--a4-h);
+  overflow: hidden;
+  padding: var(--sheet-pad);
+  position: relative;
+  width: var(--a4-w);
+}
+
+/* Soft decorative shapes on the sheet */
+.paper-blob {
+  border-radius: 50%;
+  display: block;
+  filter: blur(6mm);
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.paper-blob--a {
+  background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0) 68%);
+  height: 110mm;
+  right: -34mm;
+  top: -30mm;
+  width: 110mm;
+}
+
+.paper-blob--b {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 68%);
+  bottom: -38mm;
+  height: 100mm;
+  left: -28mm;
+  width: 100mm;
+}
+
+/* =============== GRID =============== */
+.paper-grid {
+  align-items: start;
+  display: grid;
+  gap: var(--col-gap);
+  grid-template-columns: var(--col-left) 1fr;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.col-left,
+.col-right { min-width: 0; }
+
+.right-panel {
+  background: var(--panel);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-card);
+  padding: 3.4mm 4mm 4mm;
+}
+
+/* =============== LEFT: PROFILE CARD =============== */
+.profile-card {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: 5mm 4.5mm 5.5mm;
+}
+
+.photo-frame {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3mm;
+}
+
+.photo {
+  aspect-ratio: 1 / 1;
+  border: 1mm solid #fff;
+  border-radius: 3mm;
+  box-shadow: 0 0 0 1px var(--line-soft), 0 2mm 5mm rgba(31, 62, 96, 0.16);
+  display: block;
+  max-width: 27mm;
+  object-fit: cover;
+  object-position: center 18%;
+  width: 100%;
+}
+
+.person-name {
+  color: var(--ink);
+  font-size: var(--fs-name);
+  font-weight: 800;
+  letter-spacing: 0.015em;
+  line-height: 1.16;
+  margin: 0;
+  text-align: center;
+}
+
+/* Centered section heading, used in both columns */
+.block-title {
+  border-top: 1px solid var(--line-soft);
+  color: var(--ink);
+  font-size: var(--fs-h2-sm);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin: 2.8mm 0 1.8mm;
+  padding-top: 2.4mm;
+  text-align: center;
+}
+
+.block-title::after {
+  background: var(--ink-navy);
+  border-radius: 1px;
+  content: "";
+  display: block;
+  height: 0.6mm;
+  margin: 1.4mm auto 0;
+  width: 9mm;
+}
+
+.profile-card .block-title:first-of-type {
+  border-top: none;
+  margin-top: 3mm;
+  padding-top: 0;
+}
+
+.right-panel .block-title {
+  border-top-color: rgba(36, 72, 95, 0.14);
+  font-size: var(--fs-h2);
+  margin: 3mm 0 2mm;
+  padding-top: 2.4mm;
+}
+
+.outer-block .block-title { border-top-color: rgba(36, 72, 95, 0.16); }
+
+/* Contact rows with circular icons */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3mm;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  align-items: flex-start;
+  display: flex;
+  gap: 1.8mm;
+}
+
+.contact-icon {
+  align-items: center;
+  background: var(--ink-navy);
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 4mm;
+  justify-content: center;
+  margin-top: 0.4mm;
+  width: 4mm;
+}
+
+.contact-icon svg { height: 2.4mm; width: 2.4mm; }
+
+.contact-text {
+  color: var(--ink-soft);
+  font-size: var(--fs-side);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.contact-text a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.contact-text a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* =============== LEFT: SKILLS =============== */
+.skill-list { padding: 0 0.5mm 0 1mm; }
+
+.skill-group + .skill-group {
+  border-top: 1px solid var(--line-soft);
+  margin-top: 1.2mm;
+  padding-top: 1mm;
+}
+
+.skill-group-name {
+  color: var(--ink-navy);
+  font-size: var(--fs-side-h);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.6mm;
+}
+
+/* Skills run inline so the whole stack fits the sheet */
+.skill-run {
+  color: var(--ink-soft);
+  font-size: var(--fs-side);
+  line-height: 1.45;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-run li { display: inline; }
+
+.skill-run li + li::before {
+  color: var(--line);
+  content: " · ";
+}
+
+.skill-run--center { text-align: center; }
+
+/* Two-column pair table (websites) */
+.pair-table {
+  margin: 0;
+  padding: 0 0.5mm 0 1mm;
+}
+
+.pair-row + .pair-row { margin-top: 1.4mm; }
+
+.pair-row dt {
+  color: var(--ink);
+  font-size: var(--fs-side);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.pair-row dd {
+  color: var(--ink-soft);
+  font-size: var(--fs-meta);
+  line-height: 1.35;
+  margin: 0;
+  word-break: break-word;
+}
+
+.pair-row dd a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.pair-row dd a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Block that sits on the sheet, below the white card */
+.outer-block { padding: 1.6mm 1.5mm 0; }
+
+.outer-block .block-title {
+  font-size: var(--fs-side-h);
+  margin: 0 0 1.2mm;
+  padding-top: 2mm;
+}
+
+.outer-block .block-title::after {
+  height: 0.5mm;
+  margin-top: 1mm;
+  width: 7mm;
+}
+
+.outer-block .skill-run { font-size: var(--fs-meta); }
+
+/* =============== BULLET LISTS =============== */
+.dot-list {
+  color: var(--ink-soft);
+  font-size: var(--fs-body);
+  line-height: 1.45;
+  margin: 0;
+  padding-left: 3.4mm;
+}
+
+.dot-list li + li { margin-top: 0.6mm; }
+
+.dot-list--tight { line-height: 1.45; }
+
+.dot-list--tight li + li { margin-top: 0.4mm; }
+
+.right-panel .dot-list { text-align: justify; }
+
+.text-highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =============== RIGHT: SUMMARY CARD =============== */
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 4mm;
+  box-shadow: var(--shadow-card);
+  padding: 2.6mm 3.2mm 3mm;
+}
+
+.tag-pill {
+  background: var(--ink-navy);
+  border-radius: var(--r-pill);
+  color: #fff;
+  display: inline-block;
+  font-size: var(--fs-entry);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.6mm;
+  padding: 1mm 3.4mm;
+}
+
+.about-text {
+  color: var(--ink-soft);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  margin: 0;
+  text-align: justify;
+}
+
+/* =============== RIGHT: EXPERIENCE =============== */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp + .exp {
+  border-top: 1px solid rgba(36, 72, 95, 0.14);
+  margin-top: 1.5mm;
+  padding-top: 1.5mm;
+}
+
+.exp-head {
+  align-items: center;
+  display: grid;
+  gap: 1.5mm 3mm;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.exp-pill {
+  background: var(--card);
+  border: 0.35mm solid var(--line);
+  border-radius: var(--r-pill);
+  box-shadow: 0 0.5mm 1.5mm rgba(31, 62, 96, 0.06);
+  color: var(--ink);
+  font-size: var(--fs-entry);
+  font-weight: 800;
+  justify-self: start;
+  line-height: 1.35;
+  max-width: 100%;
+  padding: 1mm 3.5mm;
+}
+
+.exp-date {
+  color: var(--ink-navy);
+  font-size: var(--fs-entry);
+  font-weight: 700;
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.exp-meta {
+  align-items: center;
+  color: var(--ink-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--fs-meta);
+  gap: 2mm;
+  margin: 1mm 0 1.2mm;
+  padding-left: 1mm;
+}
+
+.exp-salary {
+  background: rgba(36, 72, 95, 0.06);
+  border: 1px solid rgba(36, 72, 95, 0.16);
+  border-radius: var(--r-pill);
+  color: var(--ink-navy);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  padding: 0.3mm 2.4mm;
+}
+
+.exp-label {
+  border-left: 0.7mm solid var(--ink-navy);
+  color: var(--ink-navy);
+  font-size: var(--fs-label);
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 1.6mm 0 1mm;
+  padding-left: 2mm;
+}
+
+/* =============== RIGHT: EDUCATION =============== */
+.edu-block { padding: 0 0.5mm 0 1mm; }
+
+.edu-block p { margin: 0; }
+
+.edu-date {
+  color: var(--ink-navy);
+  display: block;
+  font-size: var(--fs-side);
+  font-weight: 700;
+  margin-top: 0.6mm;
+}
+
+.edu-school {
+  color: var(--ink);
+  font-size: var(--fs-side-h);
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 0.6mm;
+}
+
+.edu-degree,
+.edu-gpa {
+  color: var(--ink-soft);
+  font-size: var(--fs-side);
+  line-height: 1.4;
+}
+
+.edu-note {
+  color: var(--ink-muted);
+  font-size: var(--fs-meta);
+  line-height: 1.45;
+  padding-top: 0.8mm;
+}
+
+/* =============== SMALL SCREENS =============== */
+/* The sheet keeps A4 proportions and is scaled by --paper-scale (set in JS). */
+@media (max-width: 900px) {
+  .nav-center { display: none; }
+  .paper-stage { padding: calc(var(--nav-h) + 16px) 8px 32px; }
+}
+
+@media (max-width: 480px) {
+  .top-nav { gap: 8px; padding: 0 12px; }
+  .download-button { font-size: 0.73rem; padding: 7px 13px; }
+  .lang-btn { padding: 4px 9px; }
+}
+
+/* =============== PDF EXPORT (?pdf=1) =============== */
+.resume-page--pdf {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-pdf-stage {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+}
+
+.resume-pdf-sheet {
+  background: #fff;
+  height: var(--a4-h);
+  overflow: hidden;
+  position: relative;
+  width: var(--a4-w);
+}
+
+.resume-pdf-inner {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: top left;
+  width: var(--a4-w);
+}
+
+.resume-pdf-inner--ready { opacity: 1; }
+
+.resume-page--pdf .paper {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* =============== PRINT =============== */
+@media print {
+  @page {
+    margin: 0;
+    size: A4 portrait;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .top-nav { display: none !important; }
+
+  .paper-stage {
+    background: none !important;
+    display: block !important;
+    min-height: auto !important;
+    padding: 0 !important;
+  }
+
+  .paper-fit {
+    height: auto !important;
+    width: auto !important;
+  }
+
+  .paper-fit .paper,
+  .paper {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+}

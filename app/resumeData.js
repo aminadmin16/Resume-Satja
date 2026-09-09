@@ -62,7 +62,7 @@ export const content = {
   en: {
     eyebrow: "Software Developer",
     profileSummary:
-      "Full Stack Developer with 4+ years of hands-on experience delivering production-grade web applications across Healthcare, Energy, Insurance, and Retail sectors. Specialized in .NET (C#) + Angular (TypeScript) for enterprise systems, and React / Next.js for high-performance web. Proven track record building scalable RESTful APIs, advanced Tableau BI dashboards, and leading freelance projects end-to-end. Works daily with AI tools (Claude, ChatGPT, Gemini, Kimi) to engineer precise, logic-driven outputs, and takes on network & CCTV installation ",
+      "Full Stack Developer with 4+ years of hands-on experience delivering production-grade web applications across Healthcare, Energy, Insurance, and Retail sectors. Specialized in .NET (C#) + Angular (TypeScript) for enterprise systems, and React / Next.js for high-performance web. Proven track record building scalable RESTful APIs, advanced Tableau BI dashboards, and leading freelance projects end-to-end. Works daily with AI tools (Claude, ChatGPT, Gemini, Kimi) to engineer precise, logic-driven outputs, and takes on network & CCTV installation.",
     navItems: [
       { href: "#summary", label: "Summary" },
       { href: "#experience", label: "Experience" },
@@ -118,7 +118,7 @@ export const content = {
           "Sikarin Hospital — HIS Module: Developed complex patient-data management modules within the Hospital Information System using Angular + .NET.",
           "IRPC (Energy Sector) — BI Reporting: Led Tableau development for executive-level insight reports supporting strategic decision-making across refinery operations.",
           "TQM & Viriyah Insurance — Motor Insurance Platform: Built high-traffic Frontend for car insurance workflows, handling large concurrent user loads.",
-          "PUMPUI — Retail POS System: Delivered a full sales and inventory management solution to improve operational efficiency for retail stores.",
+          "PUMPUI — Android Application: Developed the application using Java in Android Studio.",
         ],
       },
       {
@@ -200,7 +200,7 @@ export const content = {
           "โรงพยาบาลศิครินทร์ — ระบบ HIS: พัฒนาโมดูลจัดการข้อมูลคนไข้ที่ซับซ้อนด้วย Angular + .NET",
           "IRPC (พลังงาน) — BI Reporting: รับผิดชอบตำแหน่ง Tableau Developer ออกแบบรายงานเชิงลึกสนับสนุนการตัดสินใจของผู้บริหาร",
           "TQM & Viriyah Insurance — ประกันภัยรถยนต์: พัฒนา Frontend สำหรับแพลตฟอร์มที่รองรับผู้ใช้จำนวนมาก (High-traffic)",
-          "PUMPUI — ระบบ POS ค้าปลีก: พัฒนาซอฟต์แวร์จัดการการขายและสต็อกสินค้าเพื่อเพิ่มประสิทธิภาพการดำเนินงาน",
+          "PUMPUI — แอปพลิเคชัน Android: พัฒนาแอปพลิเคชันด้วยภาษา Java โดยใช้ Android Studio",
         ],
       },
       {
