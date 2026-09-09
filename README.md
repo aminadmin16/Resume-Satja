@@ -60,3 +60,13 @@ npm run build
 - ตรวจไฟล์ดาวน์โหลดและ static assets ในผล build
 
 ข้อมูลประสบการณ์อ้างอิงจากโปรเจกต์เดิม ไม่เพิ่มตัวเลขผลลัพธ์ รางวัล หรือคำรับรองจากลูกค้าที่ไม่มีข้อมูลต้นฉบับ
+
+## Visual redesign — September 2026
+
+Dark charcoal and lime editorial design, larger typography, an identity-preserving restored studio portrait, interactive project contribution cards, expandable experience sections, and motion respecting reduced-motion preferences. Both languages and all four existing PDF downloads are retained. The PDFs remain the same verified documents; this redesign changes the website and profile photo.
+
+Image: `public/profile-satja-studio.png`, created with the built-in ImageGen tool from the original `public/profile-satja.png`. Original retained.
+
+Portrait edit prompt:
+
+> Use case: identity-preserve. Asset type: professional developer portfolio portrait. Input image 1 is the edit target: a photographed old printed portrait. Create exactly ONE restored photographic portrait of this SAME man, strictly preserving his facial identity, facial proportions, distinctive eyes, nose, mouth, jawline, hairstyle, age, skin tone, expression, frontal pose, navy formal suit, white shirt, and dark tie. Do not invent another person, reshape his face, or overly beautify him. Restore natural photographic sharpness and clear detail lost in the photographed print; remove glare, paper texture and white paper border; replace only the bright blue backdrop with a smooth deep charcoal studio background with an extremely subtle dark olive undertone, suited to a #111510 dark and #cefb69 lime portfolio palette. Keep lime out of skin and clothing. Centred upper body and shoulders portrait, ample headroom, vertical 4:5 crop, high resolution, complete top of hair visible. Tasteful soft professional studio light, gentle natural shadows, realistic skin pores and hair detail, restrained retouching, polished but authentic. Preserve the same man's face and facial structure aggressively. No waxy skin, no artificial beauty filter, no added objects, no text, no logos, no watermark.
