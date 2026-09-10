@@ -7,6 +7,7 @@ import {certificatePages} from '../app/certificates.js';
 import {createHash} from 'node:crypto';
 import {fullCV} from './full-cv.mjs';
 import {classicResume} from './classic-resume.mjs';
+import {generatePreviews} from './generate-previews.mjs';
 const root=process.cwd();
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const font=async file=>(await readFile(path.join(root,'public/fonts',file))).toString('base64');
@@ -28,3 +29,4 @@ try{for(const lang of ['th','en'])for(const type of ['resume','cv']){
  if(asset.subarray(0,5).toString()==='%PDF-'){const original=await PDFDocument.load(asset);for(const copied of await doc.copyPages(original,original.getPageIndices()))doc.addPage(copied);}else{let img;if(asset[0]===0xff&&asset[1]===0xd8)img=await doc.embedJpg(asset);else if(asset.subarray(1,4).toString()==='PNG')img=await doc.embedPng(asset);else throw new Error('Unsupported certificate file');const landscape=img.width>img.height;const [w,h]=landscape?[841.89,595.28]:[595.28,841.89];const p=doc.addPage([w,h]);if(cert.rotation)p.setRotation(degrees(cert.rotation));const s=Math.min((w-40)/img.width,(h-40)/img.height);p.drawImage(img,{x:(w-img.width*s)/2,y:(h-img.height*s)/2,width:img.width*s,height:img.height*s});}}
  doc.setTitle(`Satja Chaiseanpha - ${type.toUpperCase()} (${lang.toUpperCase()})`);doc.setAuthor('Satja Chaiseanpha');doc.setSubject('Professional experience and original certificates');const name=`Satja-Chaiseanpha-${type}-${lang}.pdf`;const destination=path.join(root,'public/documents',name);await writeFile(destination+'.tmp',await doc.save());await rename(destination+'.tmp',destination);console.log(`${name}: ${expected} body + ${doc.getPageCount()-expected} certificate pages`);await page.close();
 }}finally{await browser.close();}
+await generatePreviews();
