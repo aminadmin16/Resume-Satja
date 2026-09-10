@@ -1,7 +1,4 @@
-// Shared resume content — consumed by the web view and the PDF export.
-// Work history is kept at full detail. The only condensed entry is the
-// Network & CCTV job (6 bullets merged down to 4), as requested.
-
+// Shared, plain-language content for the website, Resume and CV.
 export const profileHighlights = [
   "Full Stack Developer",
   ".NET + Angular",
@@ -9,217 +6,307 @@ export const profileHighlights = [
   "Tableau BI",
   "AI-Assisted Dev",
   "Network & CCTV",
-  "4+ Years Exp.",
+  "4+ Years Exp."
 ];
-
 export const TECH_KEYWORDS = [
-  ".NET", ".NET (C#)", "Angular", "Angular (TypeScript)", "React", "Next.js",
-  "Tableau", "RESTful API", "Java", "Spring Boot", "DevExtreme", "SyncFusion",
-  "TypeScript", "Node.js", "SQL",
-  "Claude", "ChatGPT", "Gemini", "Kimi",
-  "CCTV", "NVR", "DVR", "PoE", "Cat6", "Cat5e", "RJ-45", "DHCP",
+  ".NET",
+  ".NET (C#)",
+  "Angular",
+  "Angular (TypeScript)",
+  "React",
+  "Next.js",
+  "Tableau",
+  "RESTful API",
+  "Java",
+  "Spring Boot",
+  "DevExtreme",
+  "SyncFusion",
+  "TypeScript",
+  "Node.js",
+  "SQL",
+  "Claude",
+  "ChatGPT",
+  "Gemini",
+  "Kimi",
+  "CCTV",
+  "NVR",
+  "DVR",
+  "PoE",
+  "Cat6",
+  "Cat5e",
+  "RJ-45",
+  "DHCP"
 ];
-
 export const skillGroups = [
   {
-    key: "languages",
-    title: { en: "Languages", th: "ภาษาที่ใช้พัฒนา" },
-    skills: ["C#", "TypeScript", "JavaScript", "Java", "SQL", "HTML / CSS / SCSS"],
+    "key": "languages",
+    "title": {
+      "en": "Languages",
+      "th": "ภาษาที่ใช้พัฒนา"
+    },
+    "skills": [
+      "C#",
+      "TypeScript",
+      "JavaScript",
+      "Java",
+      "SQL",
+      "HTML / CSS / SCSS"
+    ]
   },
   {
-    key: "frontend",
-    title: { en: "Frontend", th: "Frontend" },
-    skills: ["Angular", "React", "Next.js", "DevExtreme", "SyncFusion", "Bootstrap"],
+    "key": "frontend",
+    "title": {
+      "en": "Frontend",
+      "th": "Frontend"
+    },
+    "skills": [
+      "Angular",
+      "React",
+      "Next.js",
+      "DevExtreme",
+      "SyncFusion",
+      "Bootstrap"
+    ]
   },
   {
-    key: "backend",
-    title: { en: "Backend", th: "Backend" },
-    skills: [".NET (C#)", "RESTful API", "Node.js", "Spring Boot (Java)", "Entity Framework"],
+    "key": "backend",
+    "title": {
+      "en": "Backend",
+      "th": "Backend"
+    },
+    "skills": [
+      ".NET (C#)",
+      "RESTful API",
+      "Node.js",
+      "Spring Boot (Java)",
+      "Entity Framework"
+    ]
   },
   {
-    key: "data",
-    title: { en: "Data & BI", th: "Data & BI" },
-    skills: ["Tableau", "SQL Server / MSSQL", "Stored Procedure", "Data Modeling"],
+    "key": "data",
+    "title": {
+      "en": "Data & BI",
+      "th": "Data & BI"
+    },
+    "skills": [
+      "Tableau",
+      "SQL Server / MSSQL",
+      "Stored Procedure",
+      "Data Modeling"
+    ]
   },
   {
-    key: "ai",
-    title: { en: "AI Tools", th: "เครื่องมือ AI" },
-    skills: ["Claude", "ChatGPT", "Gemini", "Kimi"],
+    "key": "ai",
+    "title": {
+      "en": "AI Tools",
+      "th": "เครื่องมือ AI"
+    },
+    "skills": [
+      "Claude",
+      "ChatGPT",
+      "Gemini",
+      "Kimi"
+    ]
   },
   {
-    key: "tools",
-    title: { en: "Tools & Platform", th: "เครื่องมือและแพลตฟอร์ม" },
-    skills: ["Git & GitHub", "Postman", "Visual Studio / VS Code", "Android Studio", "Vercel", "Figma"],
+    "key": "tools",
+    "title": {
+      "en": "Tools & Platform",
+      "th": "เครื่องมือและแพลตฟอร์ม"
+    },
+    "skills": [
+      "Git & GitHub",
+      "Postman",
+      "Visual Studio / VS Code",
+      "Android Studio",
+      "Vercel",
+      "Figma"
+    ]
   },
   {
-    key: "network",
-    title: { en: "Network & Hardware", th: "เครือข่ายและฮาร์ดแวร์" },
-    skills: ["LAN / Cat6 Cabling", "Router & Switch Config", "Wi-Fi / Access Point", "CCTV (IP / Analog)", "Arduino (IoT)"],
-  },
+    "key": "network",
+    "title": {
+      "en": "Network & Hardware",
+      "th": "เครือข่ายและฮาร์ดแวร์"
+    },
+    "skills": [
+      "LAN / Cat6 Cabling",
+      "Router & Switch Config",
+      "Wi-Fi / Access Point",
+      "CCTV (IP / Analog)",
+      "Arduino (IoT)"
+    ]
+  }
 ];
-
 export const content = {
-  en: {
-    eyebrow: "Software Developer",
-    profileSummary:
-      "Full Stack Developer with 4+ years of hands-on experience delivering production-grade web applications across Healthcare, Energy, Insurance, and Retail sectors. Specialized in .NET (C#) + Angular (TypeScript) for enterprise systems, and React / Next.js for high-performance web. Proven track record building scalable RESTful APIs, advanced Tableau BI dashboards, and leading freelance projects end-to-end. Works daily with AI tools (Claude, ChatGPT, Gemini, Kimi) to engineer precise, logic-driven outputs, and takes on network & CCTV installation.",
-    navItems: [
-      { href: "#summary", label: "Summary" },
-      { href: "#experience", label: "Experience" },
-      { href: "#education", label: "Education" },
+  "en": {
+    "eyebrow": "Software Developer",
+    "profileSummary": "Full Stack Developer with 4+ years of experience in enterprise software and freelance projects. I turn business requirements into working web applications, APIs and dashboards using .NET, Angular, React / Next.js and Tableau. I enjoy finding the cause of a problem and taking a solution through to delivery. I also build Android apps with Java, install network and CCTV systems, and use AI tools while checking the business logic myself.",
+    "navItems": [
+      {
+        "href": "#summary",
+        "label": "Summary"
+      },
+      {
+        "href": "#experience",
+        "label": "Experience"
+      },
+      {
+        "href": "#education",
+        "label": "Education"
+      }
     ],
-    sections: {
-      contact: "CONTACT",
-      portfolio: "WEBSITES",
-      skills: "SKILLS",
-      highlights: "HIGHLIGHTS",
-      summary: "PROFESSIONAL SUMMARY",
-      experience: "WORK EXPERIENCE",
-      education: "EDUCATION",
+    "sections": {
+      "contact": "CONTACT",
+      "portfolio": "WEBSITES",
+      "skills": "SKILLS",
+      "highlights": "HIGHLIGHTS",
+      "summary": "PROFESSIONAL SUMMARY",
+      "experience": "WORK EXPERIENCE",
+      "education": "EDUCATION"
     },
-    experiences: [
+    "experiences": [
       {
-        title: "Freelance & Technical Consultant",
-        date: "Sep 2023 – Present",
-        meta: "Self-employed · Remote",
-        // salary: "Est. Income: 20,000 – 40,000 THB / month",
-        bullets: [
-          "Multi-Framework Full-Stack: Delivered client projects using Angular / DevExtreme for complex enterprise UIs and React / Next.js for SEO-optimized, high-performance public-facing websites.",
-          "Backend & API Design: Designed and built scalable RESTful APIs with .NET (C#) and Node.js, connecting to SQL/NoSQL databases with clean, maintainable architecture.",
-          "Technical Consulting: Translated ambiguous business requirements into clear technical specs and working digital products — acting as sole architect, developer, and delivery lead.",
-        ],
+        "title": "Freelance & Technical Consultant",
+        "date": "Sep 2023 – Present",
+        "meta": "Self-employed · Remote",
+        "bullets": [
+          "Build enterprise interfaces with Angular / DevExtreme and public-facing websites with React / Next.js, with attention to speed and search visibility.",
+          "Design RESTful APIs with .NET and Node.js, connect SQL/NoSQL databases, and keep the code organised for maintenance.",
+          "Work with clients to clarify requirements, choose an approach and deliver the project, taking responsibility from system design to handover."
+        ]
       },
       {
-        title: "Network & CCTV Installation — Independent Technician",
-        date: "Mar 2026 – Present",
-        meta: "Part-time · Weekends & spare time · Nong Bua Lamphu / Udon Thani",
-        // salary: "Per-project basis",
-        intro: "Scope & Responsibilities:",
-        bullets: [
-          "Survey & Cost Analysis: Surveyed each site, measured cable runs, and prepared a bill of materials with 2–3 budget options (cost vs. coverage vs. equipment lifespan) so the customer could decide with clear trade-offs before purchasing.",
-          "Network Installation: Ran and terminated UTP Cat5e/Cat6 with RJ-45, mounted switches and access points, and configured routers — WAN/PPPoE, LAN subnet, DHCP, Wi-Fi SSID & security, port forwarding, and channel planning to reduce interference.",
-          "CCTV Installation: Delivered IP and analog camera systems end-to-end — camera placement to remove blind spots, PoE/power wiring, NVR/DVR setup, storage and retention planning, motion recording, and remote viewing on mobile.",
-          // "Testing, Handover & Training: Verified every link with a LAN tester, labeled ports and cable runs, delivered a layout diagram and credential sheet, and trained users on playback, clip export, Wi-Fi changes, and first-line troubleshooting — running each job solo from quotation through warranty follow-up.",
-        ],
+        "title": "Network & CCTV Installation — Independent Technician",
+        "date": "Mar 2026 – Present",
+        "meta": "Part-time · Weekends & spare time · Nong Bua Lamphu / Udon Thani",
+        "intro": "Scope & Responsibilities:",
+        "bullets": [
+          "Survey sites, measure cable routes and prepare equipment lists with 2–3 budget options, explaining cost, coverage and equipment lifespan before purchase.",
+          "Install Cat5e/Cat6 cabling, RJ-45, switches and access points. Configure WAN/PPPoE, subnets, DHCP, Wi-Fi security, port forwarding and channels to reduce interference.",
+          "Install IP/analog CCTV, plan camera coverage, wire power/PoE, configure NVR/DVR storage and retention, motion recording and remote mobile viewing."
+        ]
       },
       {
-        title: "Multita Co.,Ltd. — Software Developer",
-        date: "Jul 2022 – Jul 2026",
-        meta: "Full-time · Remote (Udon Thani / Khon Kaen)",
-        // salary: "Salary: 20,000 THB / month",
-        intro: "Key Responsibilities:",
-        bullets: [
-          "Full-Stack Development: Designed and delivered enterprise Web Applications using Angular (TypeScript) + SyncFusion / DevExtreme on the frontend, backed by .NET (C#) RESTful APIs — serving clients in Healthcare, Insurance, and Retail verticals.",
-          "Business Intelligence: Architected large-scale data pipelines and built advanced Tableau Dashboards for Cash Conversion Cost analysis, enabling Finance teams to monitor cash flow in near-real-time.",
-          "Mobile Development: Built and maintained Android sales and motor-insurance applications using Java (Android Studio).",
+        "title": "Multita Co.,Ltd. — Software Developer",
+        "date": "Jul 2022 – Jul 2026",
+        "meta": "Full-time · Remote (Udon Thani / Khon Kaen)",
+        "intro": "Key Responsibilities:",
+        "bullets": [
+          "Built enterprise web applications with Angular, SyncFusion / DevExtreme and .NET RESTful APIs for healthcare, insurance and retail workflows.",
+          "Prepared data pipelines and Tableau dashboards for Cash Conversion Cost analysis, helping finance teams follow cash flow in near-real-time.",
+          "Developed and maintained Android sales and motor-insurance applications using Java in Android Studio."
         ],
-        projectsTitle: "Notable Projects:",
-        projects: [
-          "Sikarin Hospital — HIS Module: Developed complex patient-data management modules within the Hospital Information System using Angular + .NET.",
-          "IRPC (Energy Sector) — BI Reporting: Led Tableau development for executive-level insight reports supporting strategic decision-making across refinery operations.",
-          "TQM & Viriyah Insurance — Motor Insurance Platform: Built high-traffic Frontend for car insurance workflows, handling large concurrent user loads.",
-          "PUMPUI — Android Application: Developed the application using Java in Android Studio.",
-        ],
+        "projectsTitle": "Notable Projects:",
+        "projects": [
+          "Sikarin Hospital — HIS: Built patient-data management modules with Angular and .NET.",
+          "IRPC — BI reporting: Built Tableau reports to help executives understand operational data and support decisions.",
+          "TQM & Viriyah — Motor insurance: Developed frontend interfaces for car-insurance workflows.",
+          "PUMPUI — Android: Developed the application with Java in Android Studio."
+        ]
       },
       {
-        title: "CHAREON TUT Co.,Ltd. — Full Stack Developer (Intern)",
-        date: "Nov 2021 – Feb 2022",
-        meta: "Internship · Pathum Thani",
-        bullets: [
-          "Frontend: Implemented pixel-perfect UIs with Angular (TypeScript, HTML, SCSS) aligned to design specifications.",
-          "Backend: Built server-side modules using Java + Spring Boot (MVC architecture) to separate business logic cleanly from data access.",
-          "SDLC Exposure: Participated in the full software development lifecycle — from logic analysis through implementation and QA.",
-        ],
-      },
+        "title": "CHAREON TUT Co.,Ltd. — Full Stack Developer (Intern)",
+        "date": "Nov 2021 – Feb 2022",
+        "meta": "Internship · Pathum Thani",
+        "bullets": [
+          "Implemented Angular interfaces with TypeScript, HTML and SCSS, following the design and checking layout details.",
+          "Built Java / Spring Boot backend modules using MVC to separate business logic from data access.",
+          "Took part in requirements analysis, implementation, testing and delivery within the development team."
+        ]
+      }
     ],
-    education: {
-      school: "Udon Thani Rajabhat University",
-      degree: "Bachelor of Science — Computer Science",
-      gpa: "GPA: 3.14 / 4.00",
-      note: "Relevant: Data Structures, OOP, Database Systems, Web Development, Networking",
-      date: "2017–2021",
-    },
+    "education": {
+      "school": "Udon Thani Rajabhat University",
+      "degree": "Bachelor of Science — Computer Science",
+      "gpa": "GPA: 3.14 / 4.00",
+      "note": "Relevant: Data Structures, OOP, Database Systems, Web Development, Networking",
+      "date": "2017–2021"
+    }
   },
-
-  th: {
-    eyebrow: "นักพัฒนาซอฟต์แวร์",
-    profileSummary:
-      "Full Stack Developer ประสบการณ์ 4+ ปี ในการพัฒนา Web Application ระดับ Production สำหรับธุรกิจหลากหลายอุตสาหกรรม ทั้ง Healthcare, Energy, Insurance และ Retail เชี่ยวชาญ .NET (C#) + Angular (TypeScript) สำหรับระบบ Enterprise และ React / Next.js สำหรับเว็บที่เน้นประสิทธิภาพสูง มีผลงานพิสูจน์ได้ในการสร้าง RESTful API ที่รองรับการขยายตัว, Tableau BI Dashboard ขั้นสูง และบริหารโปรเจค Freelance ได้ครบวงจร ใช้เครื่องมือ AI (Claude, ChatGPT, Gemini, Kimi) ในการทำงานประจำวัน โดยเน้นควบคุมผลลัพธ์ให้ถูกต้องและตรงตาม Logic ของธุรกิจ นอกจากนี้ยังรับงานติดตั้งระบบ Network และกล้องวงจรปิด",
-    navItems: [
-      { href: "#summary", label: "สรุปประวัติ" },
-      { href: "#experience", label: "ประสบการณ์" },
-      { href: "#education", label: "การศึกษา" },
+  "th": {
+    "eyebrow": "นักพัฒนาซอฟต์แวร์",
+    "profileSummary": "Full Stack Developer ประสบการณ์กว่า 4 ปี ทั้งงานระบบองค์กรและงานอิสระ ผมถนัดแปลงความต้องการทางธุรกิจให้เป็นเว็บ แอป API และ Dashboard ที่ใช้งานได้จริงด้วย .NET, Angular, React / Next.js และ Tableau ชอบหาสาเหตุของปัญหาและรับผิดชอบงานตั้งแต่ออกแบบจนส่งมอบ มีประสบการณ์พัฒนา Android ด้วย Java และติดตั้ง Network / CCTV ใช้ AI ช่วยทำงานโดยตรวจความถูกต้องของ Logic ด้วยตัวเอง",
+    "navItems": [
+      {
+        "href": "#summary",
+        "label": "สรุปประวัติ"
+      },
+      {
+        "href": "#experience",
+        "label": "ประสบการณ์"
+      },
+      {
+        "href": "#education",
+        "label": "การศึกษา"
+      }
     ],
-    sections: {
-      contact: "ข้อมูลติดต่อ",
-      portfolio: "ตัวอย่างเว็บที่ทำ",
-      skills: "ทักษะ",
-      highlights: "จุดเด่น",
-      summary: "สรุปประวัติ",
-      experience: "ประสบการณ์การทำงาน",
-      education: "ประวัติการศึกษา",
+    "sections": {
+      "contact": "ข้อมูลติดต่อ",
+      "portfolio": "ตัวอย่างเว็บที่ทำ",
+      "skills": "ทักษะ",
+      "highlights": "จุดเด่น",
+      "summary": "สรุปประวัติ",
+      "experience": "ประสบการณ์การทำงาน",
+      "education": "ประวัติการศึกษา"
     },
-    experiences: [
+    "experiences": [
       {
-        title: "รับงานอิสระและที่ปรึกษาด้านซอฟต์แวร์ (Freelance & Consultant)",
-        date: "ก.ย. 2566 – ปัจจุบัน",
-        meta: "อิสระ · Remote",
-        // salary: "รายได้โดยประมาณ: 20,000 – 40,000 บาท / เดือน",
-        bullets: [
-          "Multi-Framework Full-Stack: พัฒนา Web Application ด้วย Angular/DevExtreme สำหรับ Enterprise UI ที่ซับซ้อน และ React/Next.js สำหรับเว็บที่เน้น SEO และความเร็ว",
-          "Backend & API Design: ออกแบบและพัฒนา RESTful API ที่รองรับการขยายตัวด้วย .NET (C#) และ Node.js เชื่อมต่อกับฐานข้อมูลอย่างมีประสิทธิภาพ",
-          "Technical Consulting: แปลงโจทย์ทางธุรกิจให้กลายเป็นระบบดิจิทัลที่ใช้งานได้จริง รับผิดชอบตั้งแต่ Architecture ไปจนถึง Delivery",
-        ],
+        "title": "รับงานอิสระและที่ปรึกษาด้านซอฟต์แวร์ (Freelance & Consultant)",
+        "date": "ก.ย. 2566 – ปัจจุบัน",
+        "meta": "อิสระ · Remote",
+        "bullets": [
+          "พัฒนาหน้าจอระบบองค์กรด้วย Angular / DevExtreme และเว็บไซต์ด้วย React / Next.js โดยใส่ใจความเร็วและการค้นหาผ่าน Search Engine",
+          "ออกแบบ RESTful API ด้วย .NET และ Node.js เชื่อมฐานข้อมูล SQL/NoSQL และจัดโครงสร้างโค้ดให้ดูแลต่อได้",
+          "คุยกับลูกค้าเพื่อทำความเข้าใจโจทย์ เลือกแนวทางที่เหมาะกับงาน และรับผิดชอบตั้งแต่ออกแบบระบบจนส่งมอบ"
+        ]
       },
       {
-        title: "รับติดตั้งระบบ Network และ CCTV (ช่างอิสระ)",
-        date: "มี.ค. 2569 – ปัจจุบัน",
-        meta: "งานเสริม · เสาร์–อาทิตย์ และช่วงเวลาว่าง · หนองบัวลำภู / อุดรธานี",
-        // salary: "คิดค่าบริการเป็นรายงาน (ต่อโปรเจค)",
-        intro: "ขอบเขตงานและความรับผิดชอบ:",
-        bullets: [
-          "สำรวจหน้างานและวิเคราะห์ต้นทุน: สำรวจพื้นที่ วัดระยะเดินสาย ประเมินจุดติดตั้ง แล้วจัดทำรายการอุปกรณ์พร้อมทางเลือกงบประมาณ 2–3 แบบ เปรียบเทียบราคา ความครอบคลุม และอายุการใช้งาน เพื่อให้ลูกค้าตัดสินใจได้บนข้อมูลที่ชัดเจนก่อนสั่งซื้อ",
-          "ติดตั้งระบบเครือข่าย: เดินสายและเข้าหัว UTP Cat5e/Cat6 (RJ-45), ติดตั้ง Switch และ Access Point, ตั้งค่า Router ทั้ง WAN/PPPoE, LAN Subnet, DHCP, ตั้งชื่อและรหัส Wi-Fi, Port Forwarding รวมถึงเลือกช่องสัญญาณเพื่อลดการรบกวน",
-          "ติดตั้งระบบกล้องวงจรปิด: ติดตั้งกล้อง IP และ Analog ครบวงจร ตั้งแต่วางตำแหน่งกล้องให้ครอบคลุมจุดอับ เดินสายไฟ/PoE ตั้งค่า NVR/DVR วางแผนความจุและระยะเวลาย้อนหลัง ตั้งค่าบันทึกตามการเคลื่อนไหว และดูผ่านมือถือจากภายนอกได้",
-          // "ทดสอบ ส่งมอบ และสอนการใช้งาน: ทดสอบสายทุกเส้นด้วย LAN Tester ติดป้ายกำกับพอร์ตและแนวสาย ส่งมอบแผนผังการติดตั้งพร้อมข้อมูลอุปกรณ์/รหัสผ่าน และสอนลูกค้าดูภาพย้อนหลัง ดึงคลิป เปลี่ยนรหัส Wi-Fi และแก้ปัญหาเบื้องต้น โดยดูแลเองทั้งหมดตั้งแต่เสนอราคาจนถึงรับประกันหลังการขาย",
-        ],
+        "title": "รับติดตั้งระบบ Network และ CCTV (ช่างอิสระ)",
+        "date": "มี.ค. 2569 – ปัจจุบัน",
+        "meta": "งานเสริม · เสาร์–อาทิตย์ และช่วงเวลาว่าง · หนองบัวลำภู / อุดรธานี",
+        "intro": "ขอบเขตงานและความรับผิดชอบ:",
+        "bullets": [
+          "สำรวจพื้นที่ วัดแนวเดินสายและจัดรายการอุปกรณ์ พร้อมงบประมาณ 2–3 ทางเลือก อธิบายราคา ความครอบคลุมและอายุอุปกรณ์ให้ลูกค้าตัดสินใจก่อนซื้อ",
+          "ติดตั้งสาย Cat5e/Cat6, RJ-45, Switch และ Access Point ตั้งค่า WAN/PPPoE, Subnet, DHCP, ความปลอดภัย Wi-Fi, Port Forwarding และช่องสัญญาณเพื่อลดการรบกวน",
+          "ติดตั้งกล้อง IP/Analog วางจุดกล้องให้ครอบคลุม เดินไฟ/PoE ตั้งค่า NVR/DVR พื้นที่เก็บและระยะเวลาย้อนหลัง บันทึกตามการเคลื่อนไหว และดูผ่านมือถือจากภายนอก"
+        ]
       },
       {
-        title: "บริษัท มัลติต้า จำกัด — นักพัฒนาซอฟต์แวร์",
-        date: "ก.ค. 2565 – ก.ค. 2569",
-        meta: "พนักงานประจำ · Remote (อุดรธานี / ขอนแก่น)",
-        // salary: "เงินเดือน: 20,000 บาท / เดือน",
-        intro: "หน้าที่และความรับผิดชอบ:",
-        bullets: [
-          "Full-Stack Development: ออกแบบและพัฒนา Web Application สำหรับองค์กรด้วย Angular (TypeScript) + SyncFusion / DevExtreme ฝั่ง Frontend และ .NET (C#) RESTful API ฝั่ง Backend ให้กับลูกค้าในกลุ่ม Healthcare, Insurance และ Retail",
-          "Business Intelligence: บริหารและออกแบบโครงสร้างข้อมูลขนาดใหญ่ สร้าง Tableau Dashboard ขั้นสูงสำหรับวิเคราะห์ Cash Conversion Cost ช่วยให้ฝ่ายการเงินติดตามกระแสเงินสดได้แบบ Near Real-Time",
-          "Mobile Development: พัฒนาและดูแลแอปพลิเคชัน Android สำหรับระบบขายและประกันภัยรถยนต์ด้วย Java (Android Studio)",
+        "title": "บริษัท มัลติต้า จำกัด — นักพัฒนาซอฟต์แวร์",
+        "date": "ก.ค. 2565 – ก.ค. 2569",
+        "meta": "พนักงานประจำ · Remote (อุดรธานี / ขอนแก่น)",
+        "intro": "หน้าที่และความรับผิดชอบ:",
+        "bullets": [
+          "พัฒนาเว็บระบบองค์กรด้วย Angular, SyncFusion / DevExtreme และ .NET RESTful API สำหรับงานโรงพยาบาล ประกันภัย และค้าปลีก",
+          "จัดเตรียมข้อมูลและสร้าง Tableau Dashboard วิเคราะห์ Cash Conversion Cost ให้ฝ่ายการเงินติดตามกระแสเงินสดได้ใกล้เวลาจริง",
+          "พัฒนาและดูแลแอป Android สำหรับงานขายและประกันภัยรถยนต์ด้วย Java ใน Android Studio"
         ],
-        projectsTitle: "โครงการที่รับผิดชอบ:",
-        projects: [
-          "โรงพยาบาลศิครินทร์ — ระบบ HIS: พัฒนาโมดูลจัดการข้อมูลคนไข้ที่ซับซ้อนด้วย Angular + .NET",
-          "IRPC (พลังงาน) — BI Reporting: รับผิดชอบตำแหน่ง Tableau Developer ออกแบบรายงานเชิงลึกสนับสนุนการตัดสินใจของผู้บริหาร",
-          "TQM & Viriyah Insurance — ประกันภัยรถยนต์: พัฒนา Frontend สำหรับแพลตฟอร์มที่รองรับผู้ใช้จำนวนมาก (High-traffic)",
-          "PUMPUI — แอปพลิเคชัน Android: พัฒนาแอปพลิเคชันด้วยภาษา Java โดยใช้ Android Studio",
-        ],
+        "projectsTitle": "โครงการที่รับผิดชอบ:",
+        "projects": [
+          "โรงพยาบาลศิครินทร์ — HIS: พัฒนาโมดูลจัดการข้อมูลผู้ป่วยด้วย Angular และ .NET",
+          "IRPC — BI Reporting: ทำรายงาน Tableau ให้ผู้บริหารอ่านข้อมูลการดำเนินงานและใช้ประกอบการตัดสินใจ",
+          "TQM & Viriyah — ประกันภัยรถยนต์: พัฒนา Frontend สำหรับขั้นตอนการทำประกันภัยรถยนต์",
+          "PUMPUI — Android: พัฒนาแอปพลิเคชันด้วย Java ใน Android Studio"
+        ]
       },
       {
-        title: "บริษัท เจริญทัศน์ จำกัด — Full Stack Developer (ฝึกงาน)",
-        date: "พ.ย. 2564 – ก.พ. 2565",
-        meta: "ฝึกงาน · ปทุมธานี",
-        bullets: [
-          "Frontend: พัฒนา UI ด้วย Angular (TypeScript, HTML, SCSS) ให้ตรงตามการออกแบบแบบ Pixel-Perfect",
-          "Backend: พัฒนาระบบหลังบ้านด้วย Java + Spring Boot ใช้ MVC Architecture แยกส่วน Logic และการจัดการข้อมูล",
-          "SDLC: เรียนรู้และปฏิบัติงานตาม Software Development Life Cycle จริงตั้งแต่การวิเคราะห์ไปจนถึงการส่งมอบงาน",
-        ],
-      },
+        "title": "บริษัท เจริญทัศน์ จำกัด — Full Stack Developer (ฝึกงาน)",
+        "date": "พ.ย. 2564 – ก.พ. 2565",
+        "meta": "ฝึกงาน · ปทุมธานี",
+        "bullets": [
+          "พัฒนาหน้าจอ Angular ด้วย TypeScript, HTML และ SCSS ตามแบบที่ได้รับ พร้อมตรวจรายละเอียดการจัดวาง",
+          "พัฒนา Backend ด้วย Java / Spring Boot โดยใช้ MVC แยก Logic ของงานออกจากการเข้าถึงข้อมูล",
+          "ร่วมทำงานกับทีมตั้งแต่วิเคราะห์ความต้องการ ลงมือพัฒนา ทดสอบ และส่งมอบงาน"
+        ]
+      }
     ],
-    education: {
-      school: "มหาวิทยาลัยราชภัฏอุดรธานี",
-      degree: "วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์",
-      gpa: "เกรดเฉลี่ย: 3.14 / 4.00",
-      note: "วิชาที่เกี่ยวข้อง: โครงสร้างข้อมูล, OOP, ระบบฐานข้อมูล, พัฒนาเว็บ, ระบบเครือข่าย",
-      date: "2560–2564",
-    },
-  },
+    "education": {
+      "school": "มหาวิทยาลัยราชภัฏอุดรธานี",
+      "degree": "วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์",
+      "gpa": "เกรดเฉลี่ย: 3.14 / 4.00",
+      "note": "วิชาที่เกี่ยวข้อง: โครงสร้างข้อมูล, OOP, ระบบฐานข้อมูล, พัฒนาเว็บ, ระบบเครือข่าย",
+      "date": "2560–2564"
+    }
+  }
 };

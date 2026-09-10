@@ -1,7 +1,6 @@
-// Original certificate; append entries here to include more certificates in every export.
-export const certificates = [{
-  id: 'nsc-2020',
-  title: { th: 'NSC 2020 — โครงการสมาร์ทเอลเดอร์', en: 'NSC 2020 — Smart Elder project' },
-  source: 'https://drive.google.com/file/d/12OahvgH0eRcKwNjSPdEHD8wEFC9Bnvvz/view?usp=sharing',
-  file: '/certificates/certificate.jpg',
-}];
+export const certificates = [
+  { id:'nsc-2020', title:{th:'NSC 2020 — โครงการสมาร์ทเอลเดอร์',en:'NSC 2020 — Smart Elder'}, issuer:'NSTDA', date:{th:'6 มีนาคม 2563',en:'6 March 2020'}, description:{th:'ผู้พัฒนาโครงการที่ได้รับทุนสนับสนุน หมวดโปรแกรมเพื่อช่วยคนพิการและผู้สูงอายุ ระดับนิสิต นักศึกษา',en:'Developer of a funded student project supporting people with disabilities and older adults.'}, source:'https://drive.google.com/file/d/12OahvgH0eRcKwNjSPdEHD8wEFC9Bnvvz/view?usp=sharing', file:'/certificates/certificate.jpg', rotation:0 },
+  { id:'interlink-course2', title:{th:'Advanced Installation Cabling System — Course 2',en:'Advanced Installation Cabling System — Course 2'}, issuer:'INTERLINK', date:{th:'26 เมษายน 2559',en:'26 April 2016'}, description:{th:'ใบรับรองการเข้าร่วมอบรมการติดตั้งสาย LAN, CCTV/CATV และ Fiber Optic พร้อม Workshop การเข้าหัวสาย',en:'Certificate of attendance covering LAN, CCTV/CATV and fibre-optic cabling, with termination workshops.'}, file:'/certificates/interlink-course2-front.png', rotation:270, supplement:'/certificates/interlink-course2-syllabus.png' },
+];
+export const certificatePages = certificates.flatMap(c=>[{file:c.file,rotation:c.rotation},...(c.supplement?[{file:c.supplement,rotation:c.rotation}]:[])]);
+export const documentUrl=(type,lang)=>`/documents/Satja-Chaiseanpha-${type}-${lang}.pdf?v=4`;

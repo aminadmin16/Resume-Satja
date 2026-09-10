@@ -5,20 +5,20 @@
 ## โครงสร้าง
 
 1. แนะนำตัว: ภาพโปรไฟล์ จุดยืน ทักษะหลัก และช่องทางไปดูผลงาน/ดาวน์โหลด
-2. วิธีทำงาน: เข้าใจโจทย์ เลือกทางออก รับผิดชอบจนส่งมอบ
-3. ผลงาน: บทบาทในโครงการที่ Multita พร้อมลิงก์เว็บไซต์และ GitHub เดิม
+2. ผลงาน: บทบาทในโครงการที่ Multita พร้อมลิงก์เว็บไซต์และ GitHub เดิม
+3. วิธีทำงาน: เข้าใจโจทย์ เลือกทางออก รับผิดชอบจนส่งมอบ
 4. ประสบการณ์: ประวัติการทำงานจากข้อมูลเดิม
 5. ทักษะ: จัดกลุ่มตามงานที่ทำ โดยไม่ใช้คะแนนความชำนาญที่ไม่มีหลักฐาน
-6. การศึกษาและใบประกาศ: NSC 2020 โครงการสมาร์ทเอลเดอร์ ระบุว่าได้รับทุนสนับสนุนตามต้นฉบับ
+6. การศึกษาและใบประกาศ: NSC 2020 โครงการสมาร์ทเอลเดอร์ และ INTERLINK Advanced Installation Cabling System Course 2
 7. เอกสาร: เลือก Resume / CV และภาษา ดูตัวอย่างหรือดาวน์โหลด PDF
 8. ติดต่อ: อีเมล โทรศัพท์ และ GitHub
 
 ## เอกสาร PDF
 
-- Resume: รูปแบบสองคอลัมน์โทนฟ้าตามภาพเดิม 1 หน้า + ใบประกาศ 1 หน้า
-- CV: สรุปเนื้อหา 1 หน้า + ใบประกาศ 1 หน้า
+- Resume: รูปแบบสองคอลัมน์โทนฟ้าตามภาพเดิม 1 หน้า + เอกสารแนบ 3 หน้า
+- CV: ประวัติและประสบการณ์ครบจากข้อมูลชุดเดียวกับ Resume 1 หน้า + เอกสารแนบ 3 หน้า
 - ทั้งสองรูปแบบมีภาษาไทยและอังกฤษ เนื้อหาเลือก/ค้นหาข้อความได้ และฝังฟอนต์ไทย
-- ใบประกาศแนบเป็นภาพต้นฉบับบนหน้า A4 แนวนอน รักษาสัดส่วนโดยไม่ตัดภาพ
+- เอกสารแนบ: NSC 2020, INTERLINK ด้านหน้า และรายละเอียดหลักสูตร ใช้ภาพต้นฉบับรักษาสัดส่วนโดยไม่ตัดภาพ หมุนหน้าสำหรับภาพที่ถ่ายเอียง และตรวจ SHA-256 เพื่อไม่แนบไฟล์เดิมซ้ำ
 - ดาวน์โหลดจาก `public/documents` โดยตรง ไม่ต้องติดตั้ง Chromium บนโฮสต์
 - URL เก่า `/api/resume-pdf` ยังคืน Resume ภาษาอังกฤษ
 
@@ -36,9 +36,9 @@ npm run build
 
 - ประวัติหลักและทักษะ: `app/resumeData.js`
 - เนื้อหาแนะนำตัวและผลงานบนเว็บ: `app/ResumeClient.js`
-- เนื้อหาย่อและรูปแบบ PDF: `scripts/generate-pdfs.mjs`
+- รูปแบบ PDF: `scripts/classic-resume.mjs`, `scripts/resume-classic.css`, `scripts/full-cv.mjs`; ประกอบไฟล์ด้วย `scripts/generate-pdfs.mjs`
 - ใบประกาศ: เก็บไฟล์จริงใน `public/certificates/` แล้วเพิ่มรายการใน `app/certificates.js` รองรับ PDF, JPG, PNG และแนบตามลำดับรายการ
-- เมื่อต้องการแสดงใบใหม่บนหน้าเว็บ ให้เพิ่มข้อมูลและการ์ดในส่วน Credentials ด้วย
+- การ์ดบนเว็บสร้างจากรายการเดียวกันโดยอัตโนมัติ ใช้ `supplement` สำหรับหน้ารายละเอียดหลักสูตร และ `rotation` สำหรับทิศทางหน้า
 
 หลังแก้ข้อมูล ให้สร้าง PDF ใหม่ก่อน build:
 
@@ -63,7 +63,7 @@ npm run build
 
 ## Visual redesign — September 2026
 
-Dark charcoal and lime editorial design, larger typography, an identity-preserving restored studio portrait, interactive project contribution cards, expandable experience sections, and motion respecting reduced-motion preferences. Both languages and all four existing PDF downloads are retained. The PDFs remain the same verified documents; this redesign changes the website and profile photo.
+The initial charcoal/lime redesign has been replaced by a clean white, navy and blue theme. Project contributions and experience expand on request, and motion respects reduced-motion preferences. All four PDFs are regenerated from shared bilingual content.
 
 Image: `public/profile-satja-studio.png`, created with the built-in ImageGen tool from the original `public/profile-satja.png`. Original retained.
 
@@ -74,4 +74,6 @@ Portrait edit prompt:
 
 ## รูปแบบล่าสุด
 
-เว็บปรับเป็นธีมคลีนขาว/กรมท่า/น้ำเงิน พร้อมแผน UX/UI ใน `UX-PLAN.md` และย้ายผลงานขึ้นก่อนวิธีคิด PUMPUI แก้เป็น Android Studio / Java ทุกภาษาและทุกเอกสาร Resume ใช้ `scripts/classic-resume.mjs` และ `scripts/resume-classic.css`; CV เป็นสรุปคอลัมน์เดียว 1 หน้า ทั้งสองแบบแนบใบประกาศต่อท้าย
+เว็บปรับเป็นธีมคลีนขาว/กรมท่า/น้ำเงิน พร้อมแผน UX/UI ใน `UX-PLAN.md` และย้ายผลงานขึ้นก่อนวิธีคิด PUMPUI เป็น Android Studio / Java ทุกภาษาและทุกเอกสาร Resume คงแบบสองคอลัมน์เดิม; CV จัดข้อมูลครบในหนึ่งหน้า ทั้งสองแบบแนบใบรับรอง 2 รายการ รวม 3 หน้า โดยไม่มีภาพหลักสูตรซ้ำ
+
+แถบเอกสารขนาดกะทัดรัดเลือก Resume/CV และ TH/EN แล้วดูหรือโหลดได้ ปุ่มมีเงาและการยุบเมื่อกด ไอคอนสื่อหน้าที่ของแต่ละส่วน มี skeleton ระหว่างรอฟอนต์/รูปและระหว่างเปิด PDF พร้อมเวลาสูงสุดและลิงก์เปิด PDF แยกแท็บ หน้าเว็บรองรับ reduced motion และไม่บังคับเวลารอขั้นต่ำ
