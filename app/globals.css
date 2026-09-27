@@ -36,6 +36,12 @@
 .reader-loading>span{width:70%;height:100px;border-radius:5px;background:linear-gradient(100deg,#e5ebf3 25%,#f4f7fb 50%,#e5ebf3 75%);background-size:200% 100%;animation:shimmer 1.5s linear infinite}
 .reader-error{padding:40px 24px;background:white;text-align:center}.reader-error .actions{justify-content:center}
 @media(max-width:760px){.document-reader-toolbar{padding:12px;gap:10px}.document-reader-toolbar>strong{width:100%}.document-reader-controls{gap:4px}.reader-page-count{min-width:90px;font-size:13px}.reader-zoom{min-width:55px;padding-inline:7px}.document-reader-viewport{padding:8px;max-height:75vh}.reader-loading{inset:8px 8px auto}}
+.timeline .experience-featured{padding:22px;border:1px solid #cbdcf2;border-radius:10px;background:#f7faff}
+.timeline .experience-featured:before{top:30px}
+.experience-badge{display:inline-block;padding:3px 10px;margin-bottom:12px;border:1px solid #cbddf5;border-radius:5px;color:#285a98;background:#eaf2ff;font-size:12px;font-weight:600}
+.experience-projects{margin-top:20px;padding-top:16px;border-top:1px solid #d6e3f2}
+.experience-projects h4{margin:0;color:#315c8b;font-size:15px}
+@media(max-width:760px){.timeline .experience-featured{padding:17px}.timeline .experience-featured:before{top:25px}}
 /* A certificate and its syllabus are the two sides of one document. */
 .certificate-flip{display:block;width:100%;padding:0;border:0;border-radius:8px;background:transparent;color:var(--ink);text-align:left;-webkit-tap-highlight-color:transparent}
 .certificate-flip-stage{display:block;aspect-ratio:1.42;perspective:1200px}

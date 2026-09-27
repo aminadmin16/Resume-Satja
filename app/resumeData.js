@@ -189,20 +189,22 @@ export const content = {
       },
       {
         "title": "Multita Co.,Ltd. — Software Developer",
+        "featured": true,
         "date": "Jul 2022 – Jul 2026",
         "meta": "Full-time · Remote (Udon Thani / Khon Kaen)",
         "intro": "Key Responsibilities:",
         "bullets": [
-          "Built enterprise web applications with Angular, SyncFusion / DevExtreme and .NET RESTful APIs for healthcare, insurance and retail workflows.",
-          "Prepared data pipelines and Tableau dashboards for Cash Conversion Cost analysis, helping finance teams follow cash flow in near-real-time.",
-          "Developed and maintained Android sales and motor-insurance applications using Java in Android Studio."
+          "Designed and developed enterprise web applications for healthcare, insurance and retail clients, working across Angular (TypeScript) frontends and .NET (C#) backends.",
+          "Built user interfaces with SyncFusion / DevExtreme and connected them to RESTful APIs, bringing screen workflows and backend data processing together.",
+          "Designed data structures and pipelines for business intelligence. Built Tableau dashboards for Cash Conversion Cost analysis so finance teams could monitor cash flow in near-real-time.",
+          "Developed and maintained Android applications for sales and motor-insurance workflows using Java in Android Studio."
         ],
         "projectsTitle": "Notable Projects:",
         "projects": [
-          "Sikarin Hospital — HIS: Built patient-data management modules with Angular and .NET.",
-          "IRPC — BI reporting: Built Tableau reports to help executives understand operational data and support decisions.",
-          "TQM & Viriyah — Motor insurance: Developed frontend interfaces for car-insurance workflows.",
-          "PUMPUI — Android: Developed the application with Java in Android Studio."
+          "Sikarin Hospital — HIS: Developed patient-data management modules within the Hospital Information System using Angular and .NET to support hospital workflows.",
+          "IRPC — BI reporting: Worked as a Tableau Developer for the energy sector, creating in-depth reports and dashboards to support executive decisions on refinery operations.",
+          "TQM & Viriyah — Motor insurance: Built frontend interfaces for a high-traffic car-insurance platform, supporting insurance workflows and concurrent users.",
+          "PUMPUI — Retail Android app: Developed sales and inventory functionality with Java in Android Studio to support day-to-day retail operations."
         ]
       },
       {
@@ -274,20 +276,22 @@ export const content = {
       },
       {
         "title": "บริษัท มัลติต้า จำกัด — นักพัฒนาซอฟต์แวร์",
+        "featured": true,
         "date": "ก.ค. 2565 – ก.ค. 2569",
         "meta": "พนักงานประจำ · Remote (อุดรธานี / ขอนแก่น)",
         "intro": "หน้าที่และความรับผิดชอบ:",
         "bullets": [
-          "พัฒนาเว็บระบบองค์กรด้วย Angular, SyncFusion / DevExtreme และ .NET RESTful API สำหรับงานโรงพยาบาล ประกันภัย และค้าปลีก",
-          "จัดเตรียมข้อมูลและสร้าง Tableau Dashboard วิเคราะห์ Cash Conversion Cost ให้ฝ่ายการเงินติดตามกระแสเงินสดได้ใกล้เวลาจริง",
-          "พัฒนาและดูแลแอป Android สำหรับงานขายและประกันภัยรถยนต์ด้วย Java ใน Android Studio"
+          "ออกแบบและพัฒนา Web Application สำหรับลูกค้าองค์กรในธุรกิจโรงพยาบาล ประกันภัย และค้าปลีก ดูแลงานทั้ง Frontend ด้วย Angular (TypeScript) และ Backend ด้วย .NET (C#)",
+          "พัฒนาหน้าจอด้วย SyncFusion / DevExtreme และเชื่อมต่อ RESTful API ให้ขั้นตอนการใช้งานบนหน้าจอทำงานร่วมกับการประมวลผลข้อมูลฝั่ง Backend",
+          "ออกแบบโครงสร้างและกระบวนการเตรียมข้อมูลสำหรับงาน Business Intelligence สร้าง Tableau Dashboard วิเคราะห์ Cash Conversion Cost ให้ฝ่ายการเงินติดตามกระแสเงินสดได้ใกล้เวลาจริง",
+          "พัฒนาและดูแลแอป Android สำหรับระบบขายและประกันภัยรถยนต์ด้วย Java ใน Android Studio"
         ],
         "projectsTitle": "โครงการที่รับผิดชอบ:",
         "projects": [
-          "โรงพยาบาลศิครินทร์ — HIS: พัฒนาโมดูลจัดการข้อมูลผู้ป่วยด้วย Angular และ .NET",
-          "IRPC — BI Reporting: ทำรายงาน Tableau ให้ผู้บริหารอ่านข้อมูลการดำเนินงานและใช้ประกอบการตัดสินใจ",
-          "TQM & Viriyah — ประกันภัยรถยนต์: พัฒนา Frontend สำหรับขั้นตอนการทำประกันภัยรถยนต์",
-          "PUMPUI — Android: พัฒนาแอปพลิเคชันด้วย Java ใน Android Studio"
+          "โรงพยาบาลศิครินทร์ — HIS: พัฒนาโมดูลจัดการข้อมูลผู้ป่วยภายใน Hospital Information System ด้วย Angular และ .NET เพื่อรองรับข้อมูลและขั้นตอนการทำงานของโรงพยาบาล",
+          "IRPC — BI Reporting: รับผิดชอบงาน Tableau Developer สำหรับธุรกิจพลังงาน ออกแบบรายงานเชิงลึกและ Dashboard ให้ผู้บริหารใช้ติดตามการดำเนินงานและประกอบการตัดสินใจ",
+          "TQM & Viriyah — ประกันภัยรถยนต์: พัฒนา Frontend สำหรับแพลตฟอร์มที่มีผู้ใช้จำนวนมาก รองรับขั้นตอนการทำประกันภัยรถยนต์และการใช้งานพร้อมกัน",
+          "PUMPUI — แอป Android ค้าปลีก: พัฒนางานขายและการจัดการสต็อกสินค้าด้วย Java ใน Android Studio เพื่อสนับสนุนการทำงานประจำวันของร้านค้าปลีก"
         ]
       },
       {
@@ -310,3 +314,6 @@ export const content = {
     }
   }
 };
+
+// Lead with the main full-time role, preserving the other roles' existing order.
+export const getExperiences = lang => [...content[lang].experiences].sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));

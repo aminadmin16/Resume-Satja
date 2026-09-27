@@ -1,9 +1,9 @@
 {
   "resume-th": {
-    "pdfSha256": "dae54b7d5203c0dc324669bc43f166e16d04b9b20913cfef744da8062f4df8d2",
+    "pdfSha256": "0a9efa507457b92c9cfa5da11b77091cd0173ea7b2e2f5029e63a7e5ebae00b4",
     "pages": [
       {
-        "src": "/documents/previews/af1d61fdc6bb0654bd1745cf.jpg",
+        "src": "/documents/previews/45335dcadb4137a80eea8301.jpg",
         "width": 1555,
         "height": 2200
       },
@@ -25,10 +25,10 @@
     ]
   },
   "cv-th": {
-    "pdfSha256": "18e4942b4db8a0d7a151bc485e27da1625983f7747ba8b6579fe3ce12f887b56",
+    "pdfSha256": "1bbdc55f0cffcf6eb4e4b90598a96b3787af71efe4f6b2ed758a7c31616c55cd",
     "pages": [
       {
-        "src": "/documents/previews/4a502e844e884e1689697599.jpg",
+        "src": "/documents/previews/cf70a266caa2f151e9429dd3.jpg",
         "width": 1555,
         "height": 2200
       },
@@ -50,10 +50,10 @@
     ]
   },
   "resume-en": {
-    "pdfSha256": "c5a7d6aa44d2d11598c663a697f8e9fe6c2b8643cd6f1e7ea8fc07f868a6fe6e",
+    "pdfSha256": "f49b759cd77bc4a090bde8f87baa417715d2d50b50b41c2a2600e486ef0e49b4",
     "pages": [
       {
-        "src": "/documents/previews/41dd8617b8692516e94e1dfa.jpg",
+        "src": "/documents/previews/5080243614c260035e47bc0d.jpg",
         "width": 1555,
         "height": 2200
       },
@@ -75,10 +75,10 @@
     ]
   },
   "cv-en": {
-    "pdfSha256": "1417b3e97c950823c528b7d783cf3c5980c97612bc2395cee2454f858ed15cf4",
+    "pdfSha256": "bb0e1bef8dbfb50825ec40f350c7a1fd99428cacc54f2b761d1457a6267fbf9e",
     "pages": [
       {
-        "src": "/documents/previews/a24b9dc58c25cb90ef5f1bb4.jpg",
+        "src": "/documents/previews/df2d9d2c76f84669c9149b75.jpg",
         "width": 1555,
         "height": 2200
       },

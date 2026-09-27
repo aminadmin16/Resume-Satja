@@ -3,4 +3,4 @@ export const certificates = [
   { id:'interlink-course2', title:{th:'Advanced Installation Cabling System — Course 2',en:'Advanced Installation Cabling System — Course 2'}, issuer:'INTERLINK', date:{th:'26 เมษายน 2559',en:'26 April 2016'}, description:{th:'ใบรับรองการเข้าร่วมอบรมการติดตั้งสาย LAN, CCTV/CATV และ Fiber Optic พร้อม Workshop การเข้าหัวสาย',en:'Certificate of attendance covering LAN, CCTV/CATV and fibre-optic cabling, with termination workshops.'}, file:'/certificates/interlink-course2-front.png', rotation:270, supplement:'/certificates/interlink-course2-syllabus.png' },
 ];
 export const certificatePages = certificates.flatMap(c=>[{file:c.file,rotation:c.rotation},...(c.supplement?[{file:c.supplement,rotation:c.rotation}]:[])]);
-export const documentUrl=(type,lang)=>`/documents/Satja-Chaiseanpha-${type}-${lang}.pdf?v=4`;
+export const documentUrl=(type,lang)=>`/documents/Satja-Chaiseanpha-${type}-${lang}.pdf?v=5`;
